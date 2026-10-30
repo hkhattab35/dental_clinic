@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Amani Mneimneh Clinic - Dental & Oral Surgeon</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <style>
+        body, * { font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif; }
+    </style>
+</head>
+<body>
+
+    <div id="global-loading-bar"></div>
+
+    <!-- ========================================== -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ========================================== -->
+    <aside class="toothlogic-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand-logo">🦷</div>
+            <div class="sidebar-brand-text">
+                <h2 style="font-size:1.12rem; font-weight:900;">Dr. Amani Mneimneh Clinic</h2>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Dental & Oral Surgeon</span>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+            <div class="sidebar-category-title">الرئيسية والعيادة</div>
+            
+            <button class="nav-item-btn active" data-tab="dashboard" onclick="window.app.switchTab('dashboard')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1Zm7-9h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm7 5h4a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"/></svg></span>
+                <span>لوحة التحكم</span>
+            </button>
+
+            <button class="nav-item-btn" data-tab="patients" onclick="window.app.switchTab('patients')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-7 3c-3.3 0-6 2-6 4.5V20h9v-1.5c0-1 .3-2 .9-2.8C12.4 14.7 10.3 14 9 14Zm7 0c-.7 0-1.8.2-2.7.6.9 1 1.4 2.2 1.4 3.4V20h6v-2c0-2.3-2.3-4-4.7-4Z"/></svg></span>
+                <span>سجل المرضى</span>
+            </button>
+
+            <button id="navProfileBtn" class="nav-item-btn" data-tab="profile" style="display:none;" onclick="window.app.switchTab('profile')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6a2 2 0 0 1 2-2h4.2a2 2 0 0 1 1.6.8L12 6h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z"/></svg></span>
+                <span>الملف السريري والأسنان</span>
+            </button>
+
+            <button class="nav-item-btn" data-tab="appointments" onclick="window.app.switchTab('appointments')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1Zm13 8H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9Z"/></svg></span>
+                <span>جدول المواعيد</span>
+            </button>
+
+            <div class="sidebar-category-title" style="margin-top:10px;">الخدمات والمختبر</div>
+
+            <button class="nav-item-btn" data-tab="lab" onclick="window.app.switchTab('lab')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 2h6a1 1 0 1 1 0 2h-.5v5.6l4.3 7.5c.9 1.5-.2 3.4-2 3.4H7.2c-1.8 0-2.9-1.9-2-3.4l4.3-7.5V4H9a1 1 0 1 1 0-2Zm1.5 2v6.1c0 .2 0 .3-.1.5l-1.8 3.1h6.8l-1.8-3.1c-.1-.2-.1-.3-.1-.5V4h-3Z"/></svg></span>
+                <span>مختبر الأسنان والمقاسات</span>
+            </button>
+
+            <button class="nav-item-btn" data-tab="care" onclick="window.app.switchTab('care')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H8a1 1 0 1 1 0-2h3V7a1 1 0 1 1 2 0Z"/></svg></span>
+                <span>تعليمات ما بعد العلاج</span>
+            </button>
+
+            <div class="sidebar-category-title" style="margin-top:10px;">المالية والأمان</div>
+
+            <button class="nav-item-btn" data-tab="financials" onclick="window.app.switchTab('financials')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 7a2 2 0 0 1 2-2h12a1 1 0 1 1 0 2H5v2h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm13.5 6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg></span>
+                <span>الحسابات والتقارير</span>
+            </button>
+
+            <button class="nav-item-btn" data-tab="settings" onclick="window.app.switchTab('settings')">
+                <span class="nav-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V5l-8-3Zm3.7 7.3-4.2 4.2a1 1 0 0 1-1.4 0L8.3 11.7a1 1 0 1 1 1.4-1.4l1.3 1.3 3.5-3.5a1 1 0 1 1 1.4 1.4Z"/></svg></span>
+                <span>الإعدادات والنسخ الاحتياطي</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ========================================== -->
+    <!-- APP VIEWPORT (CONTENT AREA) -->
+    <!-- ========================================== -->
+    <div class="app-viewport">
+        
+        <!-- Top Navbar -->
+        <header class="top-navbar">
+            <div class="search-and-date">
+                <div class="global-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="globalSearchInput" placeholder="بحث سريع بالاسم، رقم الملف، أو الهاتف..." autocomplete="off">
+                    <div id="globalSearchResults" class="global-search-results"></div>
+                </div>
+            </div>
+
+            <div class="top-actions">
+            </div>
+        </header>
+
+        <!-- Dynamic View Container -->
+        <main class="view-container">
+
+            <!-- ========================================== -->
+            <!-- 1. DASHBOARD VIEW -->
+            <!-- ========================================== -->
+            <section id="tab-dashboard" class="tab-pane active">
+                <div id="backupReminderBanner" class="panel-card backup-reminder-banner" style="display:none;">
+                    <div class="backup-reminder-msg">
+                        <span class="backup-reminder-icon">⚠️</span>
+                        <span id="backupReminderText"></span>
+                    </div>
+                    <div class="backup-reminder-actions">
+                        <button class="btn btn-success btn-sm" onclick="window.app.downloadFullBackup()">💾 حفظ نسخة احتياطية الآن</button>
+                        <button class="btn btn-outline btn-sm" onclick="window.app.dismissBackupReminder()">تذكيرني لاحقاً</button>
+                    </div>
+                </div>
+                <div class="kpi-grid">
+                    <div class="kpi-card kpi-blue">
+                        <div class="kpi-icon-wrapper">👥</div>
+                        <div class="kpi-details">
+                            <h4 id="dashTotalPatients">0</h4>
+                            <p>إجمالي المرضى المسجلين</p>
+                            <small id="dashTotalPatientsTrend" class="kpi-trend" data-no-translate></small>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card kpi-amber">
+                        <div class="kpi-icon-wrapper">📅</div>
+                        <div class="kpi-details">
+                            <h4 id="dashTodayAppts">0</h4>
+                            <p>مواعيد اليوم</p>
+                            <small id="dashTodayApptsTrend" class="kpi-trend" data-no-translate></small>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card kpi-green">
+                        <div class="kpi-icon-wrapper">💵</div>
+                        <div class="kpi-details">
+                            <h4 id="dashTodayRevenue">$0.00</h4>
+                            <p>مقبوضات اليوم</p>
+                            <small id="dashTodayRevenueTrend" class="kpi-trend" data-no-translate></small>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card kpi-purple">
+                        <div class="kpi-icon-wrapper">🧪</div>
+                        <div class="kpi-details">
+                            <h4 id="dashPendingLab">0</h4>
+                            <p>طلبات مختبر قيد التنفيذ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3>📅 جدول ومواعيد اليوم (Today's Encounters)</h3>
+                        <div style="display:flex; gap:10px; align-items:center;">
+                            <button class="btn btn-outline btn-sm" data-no-translate style="position:relative;" onclick="window.app.openNotificationsListModal()">
+                                🔔 Notifications
+                                <span id="notificationBadge" style="display:none; position:absolute; top:-8px; inset-inline-end:-8px; background:var(--danger); color:#fff; border-radius:999px; min-width:18px; height:18px; padding:0 4px; font-size:0.7rem; font-weight:800; align-items:center; justify-content:center;">0</span>
+                            </button>
+                            <button class="btn btn-primary btn-sm" onclick="window.app.openNewAppointmentModal()">➕ حجز موعد جديد</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>الوقت</th>
+                                        <th>اسم المريض</th>
+                                        <th>الإجراء المطلوب</th>
+                                        <th>حالة الموعد</th>
+                                        <th>إجراء سريع</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashTodayApptsTable">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 2. PATIENTS DIRECTORY -->
+            <!-- ========================================== -->
+            <section id="tab-patients" class="tab-pane">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3>👥 دليل وسجل المرضى والملفات الطبية</h3>
+                        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                            <div style="display:flex; background:#e2e8f0; border-radius:8px; padding:3px; gap:2px;">
+                                <button id="btnViewActivePatients" class="btn btn-sm" style="background:white; color:var(--primary); font-weight:bold; box-shadow:0 1px 3px rgba(0,0,0,0.1);" onclick="window.app.setPatientDirectoryView('active')">المرضى الحاليين</button>
+                                <button id="btnViewArchivedPatients" class="btn btn-sm" style="background:transparent; color:#64748b; font-weight:normal;" onclick="window.app.setPatientDirectoryView('archived')">الأرشيف 📦</button>
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.openNewPatientModal()">➕ إضافة مريض جديد</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" id="patientSearchInput" placeholder="🔍 فلترة بالاسم، رقم الهاتف، أو كود الملف (PAT-00001)..." style="width:100%; padding:14px; font-size:1rem;">
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="cursor:pointer; user-select:none;" onclick="window.app.sortPatientsByCode()" title="ترتيب حسب رقم الملف (تصاعدي / تنازلي)">رقم الملف</th>
+                                        <th style="cursor:pointer; user-select:none;" onclick="window.app.sortPatientsByName()" title="ترتيب أبجدي من A إلى Z ومن Z إلى A">اسم المريض</th>
+                                        <th style="cursor:pointer; user-select:none;" onclick="window.app.sortPatientsByAge()" title="ترتيب حسب العمر">العمر / الجنس</th>
+                                        <th>رقم الهاتف</th>
+                                        <th>الزيارات</th>
+                                        <th>حالة الأسنان</th>
+                                        <th>إجراءات الملف</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="patientsTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="patientsPagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 3. CLINICAL FILE & DENTAL CHART -->
+            <!-- ========================================== -->
+            <section id="tab-profile" class="tab-pane">
+                
+                <!-- Patient Banner -->
+                <div class="panel-card" style="border-right: 6px solid var(--primary); background: linear-gradient(to left, #ffffff, #f0f9ff);">
+                    <div class="panel-body" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+                        <div>
+                            <div style="display:flex; align-items:center; gap:12px;">
+                                <h2 id="activePatName" style="color:var(--primary); font-size:1.5rem; font-weight:800;">اختر مريضاً للبدء</h2>
+                                <span id="activePatCode" class="badge badge-blue">PAT-00000</span>
+                            </div>
+                            <div style="margin-top:8px; color:var(--text-muted); font-size:0.92rem; display:flex; gap:20px; flex-wrap:wrap;">
+                                <span>🎂 العمر: <strong id="activePatAge" style="color:var(--text-main);">--</strong></span>
+                                <span>📞 الهاتف: <strong id="activePatPhone" style="color:var(--text-main);">--</strong></span>
+                                <span id="activePatReferredByWrap" style="display:none;">👥 وصل عن طريق: <strong id="activePatReferredBy" style="color:var(--text-main);"></strong></span>
+                            </div>
+                            <div id="activePatAlerts" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+                                <!-- Alert pills -->
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                            <button class="btn btn-success" onclick="window.app.printPatientComprehensiveReport()" title="طباعة تقرير علاجي شامل ومفصل لتسليمه للمريض كملف خاص به">
+                                📄 تقرير علاج المريض
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="window.app.openEditPatientModal(window.app.activePatient?.id)">✏️ تعديل البيانات</button>
+                            <button class="btn btn-danger btn-sm" onclick="window.app.deletePatientPermanently(window.app.activePatient?.id)" title="حذف نهائي وشامل لملف المريض">🗑️ حذف الملف</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick actions: everything the doctor does for this patient, one click away -->
+                <div class="quick-actions-bar" data-no-translate>
+                    <button class="btn btn-primary" onclick="window.app.openNewVisitModal()">🦷 Procedure &amp; Visit</button>
+                    <button class="btn btn-success" onclick="window.app.openInvoicePayment()">🧾 Invoice &amp; Payment</button>
+                    <button class="btn btn-outline" onclick="window.app.openNewPrescriptionModal()">💊 Prescription</button>
+                    <button class="btn btn-outline" onclick="window.app.openNewAppointmentModal()">📅 Appointment</button>
+                    <button class="btn btn-outline" onclick="window.app.openNewLabCaseModal()">🧪 Lab</button>
+                    <button class="btn btn-outline" onclick="window.app.openOrthoModal()">🦷 Ortho</button>
+                </div>
+
+                <div class="patient-tabs-nav" data-no-translate>
+                    <button type="button" class="patient-tab-btn active" data-ptab="overview" onclick="window.app.setPatientTab('overview')">Overview</button>
+                    <button type="button" class="patient-tab-btn" data-ptab="teeth" onclick="window.app.setPatientTab('teeth')">Teeth</button>
+                    <button type="button" class="patient-tab-btn" data-ptab="clinical" onclick="window.app.setPatientTab('clinical')">Clinical</button>
+                    <button type="button" class="patient-tab-btn" data-ptab="account" onclick="window.app.setPatientTab('account')">Account</button>
+                    <button type="button" class="patient-tab-btn" data-ptab="history" onclick="window.app.setPatientTab('history')">History</button>
+                    <button type="button" class="patient-tab-btn" data-ptab="documents" onclick="window.app.setPatientTab('documents')">Documents</button>
+                </div>
+
+                <!-- OVERVIEW -->
+                <div class="patient-tab-pane active" data-ptab-pane="overview">
+                    <div class="pw-kpi-grid" data-no-translate>
+                        <div class="pw-kpi"><span id="pwBalanceLabel">Balance</span><strong id="pwBalance">$0.00</strong></div>
+                        <div class="pw-kpi"><span>Procedures</span><strong id="pwProcedures">0</strong></div>
+                        <div class="pw-kpi"><span>Visits</span><strong id="pwVisits">0</strong></div>
+                        <div class="pw-kpi"><span>Next appointment</span><strong id="pwNextAppt" style="font-size:1rem;">--</strong></div>
+                    </div>
+                    <div class="pw-overview-grid">
+                        <div class="panel-card">
+                            <div class="panel-header"><h3 data-no-translate>🕘 Recent Activity</h3><button class="btn btn-outline btn-sm" data-no-translate onclick="window.app.setPatientTab('history')">View all</button></div>
+                            <div class="panel-body" id="pwRecentActivity"></div>
+                        </div>
+                        <div class="panel-card">
+                            <div class="panel-header"><h3 data-no-translate>💳 Account</h3><button class="btn btn-outline btn-sm" data-no-translate onclick="window.app.setPatientTab('account')">Statement</button></div>
+                            <div class="panel-body" id="pwAccountSummary"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEETH (chart + treatment plan) -->
+                <div class="patient-tab-pane" data-ptab-pane="teeth">
+                <div class="panel-card">
+                    <div class="panel-body">
+
+                        <!-- 1. Dental Chart -->
+                        <div style="margin-bottom:35px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="color:var(--text-main); font-size:1.2rem; font-weight:800;">🦷 مخطط الأسنان التفاعلي (Interactive Dental Chart)</h3>
+                                <small style="color:var(--text-muted); font-weight:600;">* انقر على أي سن لتحديد الحالة السريرية والأسطح وإضافته للخطة</small>
+                            </div>
+                            <div id="dental-chart-container"></div>
+                        </div>
+
+                        <!-- 2. Treatment Plan -->
+                        <div style="margin-bottom:35px; border-top:1px solid var(--border); padding-top:25px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="color:var(--text-main); font-size:1.2rem; font-weight:800;">📋 الخطة العلاجية المجدولة (Treatment Plan)</h3>
+                                <button class="btn btn-primary btn-sm" onclick="window.app.openAddPlanItemModal()">➕ إضافة إجراء مخصص</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>السن</th>
+                                            <th>الإجراء / العلاج</th>
+                                            <th>الأسطح</th>
+                                            <th data-no-translate>Notes</th>
+                                            <th>التكلفة المتوقعة</th>
+                                            <th>حالة التنفيذ</th>
+                                            <th>حذف</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="treatmentPlanTableBody">
+                                        <!-- Dynamic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- CLINICAL (visits, lab, prescriptions) -->
+                <div class="patient-tab-pane" data-ptab-pane="clinical">
+                <div class="panel-card">
+                    <div class="panel-body">
+
+                        <!-- 3. Clinical Encounters / Visits -->
+                        <div style="margin-bottom:35px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="color:var(--text-main); font-size:1.2rem; font-weight:800;">🩺 سجل الجلسات السريرية والملاحظات (Clinical Visits)</h3>
+                                <button class="btn btn-primary btn-sm" onclick="window.app.openNewVisitModal()">➕ تسجيل جلسة جديدة</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>تاريخ الجلسة</th>
+                                            <th>رقم السن</th>
+                                            <th>الإجراء المنجز (Procedure)</th>
+                                            <th>ملاحظات الطبيب</th>
+                                            <th>الموعد القادم</th>
+                                            <th>صورة الأشعة</th>
+                                            <th>إجراءات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="visitsTableBody">
+                                        <!-- Dynamic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 4. Patient Lab Cases -->
+                        <div style="margin-bottom:35px; border-top:1px solid var(--border); padding-top:25px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="color:var(--text-main); font-size:1.2rem; font-weight:800;">🧪 طلبات المختبر والمقاسات الخاصة بالمريض (Lab Cases)</h3>
+                                <button class="btn btn-primary btn-sm" onclick="window.app.openNewLabCaseModal()">➕ إرسال طلب للمختبر</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>رقم الطلب</th>
+                                            <th>اسم المختبر</th>
+                                            <th>نوع العمل</th>
+                                            <th>اللون (Shade)</th>
+                                            <th>تاريخ التسليم</th>
+                                            <th>الحالة</th>
+                                            <th>تحديث الحالة</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="patLabCasesTableBody">
+                                        <!-- Dynamic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 6. Prescriptions -->
+                        <div style="border-top:1px solid var(--border); padding-top:25px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="color:var(--text-main); font-size:1.2rem; font-weight:800;">💊 الوصفة الطبية والأشعة (Medical Prescription &amp; X-ray)</h3>
+                                <button class="btn btn-primary btn-sm" onclick="window.app.openNewPrescriptionModal()">➕ تحرير وصفة طبية</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>التاريخ</th>
+                                            <th>التشخيص</th>
+                                            <th>الأدوية الموصوفة والجرعات</th>
+                                            <th>ملاحظات</th>
+                                            <th>خيارات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="patPrescriptionsTableBody">
+                                        <!-- Dynamic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- ACCOUNT (statement of account + invoices) -->
+                <div class="patient-tab-pane" data-ptab-pane="account">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 data-no-translate>📒 Statement of Account</h3>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap;" data-no-translate>
+                            <button class="btn btn-outline btn-sm" onclick="window.app.printPatientStatement()">🖨️ Print</button>
+                            <button class="btn btn-success btn-sm" onclick="window.app.exportPatientStatementToPDF()">📄 Export to PDF</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="pw-kpi-grid" data-no-translate>
+                            <div class="pw-kpi"><span>Total Treatment</span><strong id="stTotal">$0.00</strong></div>
+                            <div class="pw-kpi"><span>Paid</span><strong id="stPaid" style="color:var(--success);">$0.00</strong></div>
+                            <div class="pw-kpi"><span id="stBalanceLabel">Balance</span><strong id="stBalance">$0.00</strong></div>
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead data-no-translate>
+                                    <tr><th>Date</th><th>Inv No.</th><th>Description</th><th>Debit</th><th>Credit</th><th>Balance</th><th></th></tr>
+                                </thead>
+                                <tbody id="pwStatementBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-card">
+                    <div class="panel-body">
+                        <!-- 5. Invoices & Billing -->
+                        <div style="margin-bottom:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                                <h3 style="color:var(--text-main); font-size:1.2rem; font-weight:800;">💵 الفواتير وسندات القبض (Billing & Payments)</h3>
+                                <button class="btn btn-success btn-sm" onclick="window.app.openCreateInvoiceModal()">🧾 إنشاء فاتورة جديدة</button>
+                            </div>
+                            <div id="patFinancialSummary" style="display:none;"></div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>رقم الفاتورة</th>
+                                            <th>التاريخ</th>
+                                            <th>السن</th>
+                                            <th>المجموع الصافي</th>
+                                            <th>المسدد</th>
+                                            <th>المتبقي</th>
+                                            <th>الحالة</th>
+                                            <th>إجراءات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="patInvoicesTableBody">
+                                        <!-- Dynamic -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- HISTORY (unified timeline) -->
+                <div class="patient-tab-pane" data-ptab-pane="history">
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3 data-no-translate>🕘 Patient Timeline</h3>
+                            <select id="pwTimelineFilter" data-no-translate onchange="window.app.renderPatientTimeline()" style="max-width:200px;">
+                                <option value="">All events</option>
+                                <option value="appointment">Appointments</option>
+                                <option value="visit">Visits</option>
+                                <option value="procedure">Procedures</option>
+                                <option value="invoice">Invoices</option>
+                                <option value="payment">Payments</option>
+                                <option value="prescription">Prescriptions</option>
+                                <option value="lab">Lab</option>
+                                <option value="attachment">Attachments</option>
+                            </select>
+                        </div>
+                        <div class="panel-body" id="pwTimeline"></div>
+                    </div>
+                </div>
+
+                <!-- DOCUMENTS -->
+                <div class="patient-tab-pane" data-ptab-pane="documents">
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3 data-no-translate>📁 Documents</h3>
+                            <div style="display:flex; gap:8px; flex-wrap:wrap;" data-no-translate>
+                                <button class="btn btn-outline btn-sm" onclick="window.app.printPatientComprehensiveReport()">📄 Patient treatment report</button>
+                                <button class="btn btn-outline btn-sm" onclick="window.app.printPatientStatement()">🖨️ Statement of account</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table>
+                                    <thead data-no-translate><tr><th>Date</th><th>Type</th><th>Related to</th><th>File</th></tr></thead>
+                                    <tbody id="pwDocumentsBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 4. APPOINTMENTS SCHEDULE -->
+            <!-- ========================================== -->
+            <section id="tab-appointments" class="tab-pane">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3>📅 جدول المواعيد والحجوزات</h3>
+                        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                            <div style="display:flex; background:#e2e8f0; border-radius:8px; padding:3px; gap:2px;">
+                                <button id="btnApptViewTable" class="btn btn-sm" style="background:white; color:var(--primary); font-weight:bold; box-shadow:0 1px 3px rgba(0,0,0,0.1);" onclick="window.app.setAppointmentsView('table')">📋 عرض القائمة</button>
+                                <button id="btnApptViewCalendar" class="btn btn-sm" style="background:transparent; color:#64748b; font-weight:normal;" onclick="window.app.setAppointmentsView('calendar')">🗓️ عرض التقويم</button>
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.openNewAppointmentModal()">➕ حجز موعد جديد</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="appointmentsTableView" class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>الوقت</th>
+                                        <th>اسم المريض</th>
+                                        <th>رقم الهاتف</th>
+                                        <th>نوع الإجراء</th>
+                                        <th>حالة الموعد</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="appointmentsTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="appointmentsCalendarView" style="display:none;">
+                            <div class="calendar-nav">
+                                <button class="btn btn-outline btn-sm" onclick="window.app.calendarPrevWeek()">◀</button>
+                                <button class="btn btn-outline btn-sm" onclick="window.app.calendarToday()">اليوم</button>
+                                <button class="btn btn-outline btn-sm" onclick="window.app.calendarNextWeek()">▶</button>
+                                <strong id="calendarWeekLabel"></strong>
+                                <small style="color:var(--text-muted); font-weight:600;">* انقر على خلية فارغة لحجز موعد بذلك التوقيت</small>
+                            </div>
+                            <div id="calendarLegend" class="calendar-legend"></div>
+                            <div class="calendar-scroll">
+                                <div id="calendarGrid" class="calendar-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 5. DENTAL LAB & ALIGNER CASES (ToothLogic) -->
+            <!-- ========================================== -->
+            <section id="tab-lab" class="tab-pane">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3>🧪 تتبع طلبات ومقاسات مختبر الأسنان (Lab & Aligner Tracker)</h3>
+                        <button class="btn btn-primary" onclick="window.app.openNewLabCaseModal()">➕ طلب مختبر جديد</button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>رقم الطلب</th>
+                                        <th>المريض</th>
+                                        <th>المختبر</th>
+                                        <th>نوع العمل واللون</th>
+                                        <th>تاريخ الإرسال</th>
+                                        <th>موعد الاستلام</th>
+                                        <th>الحالة</th>
+                                        <th>تحديث الحالة</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="labCasesTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 6. POST-OP INSTRUCTIONS (ToothLogic) -->
+            <!-- ========================================== -->
+            <section id="tab-care" class="tab-pane">
+                <div style="margin-bottom: 20px;">
+                    <h2 style="font-size:1.4rem; font-weight:800; color:var(--text-main);">🩺 مكتبة تعليمات ما بعد العلاج وإرشادات المرضى</h2>
+                    <p style="color:var(--text-muted); font-weight:600;">يمكنك طباعة أي من هذه الإرشادات وتسليمها للمريض فور انتهاء الجلسة.</p>
+                </div>
+                <div id="instructionsContainer">
+                    <!-- Dynamic cards -->
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 7. FINANCIALS & LEDGER -->
+            <!-- ========================================== -->
+            <section id="tab-financials" class="tab-pane">
+                <div class="report-tabs-nav" data-no-translate>
+                    <button type="button" class="report-tab-btn active" data-report-tab="financial" onclick="window.app.setReportsTab('financial')">💰 Financial Report</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="expenses" onclick="window.app.setReportsTab('expenses')">💸 Expenses</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="registrations" onclick="window.app.setReportsTab('registrations')">🧑‍⚕️ New Patient Reg.</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="procedures" onclick="window.app.setReportsTab('procedures')">📊 Procedures by Type</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="ledger" onclick="window.app.setReportsTab('ledger')">📋 Daily Ledger</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="ortho" onclick="window.app.setReportsTab('ortho')">🦷 Ortho Report</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="general" onclick="window.app.setReportsTab('general')">🔎 General Report</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="due" onclick="window.app.setReportsTab('due')">💰 Due Amounts</button>
+                    <button type="button" class="report-tab-btn" data-report-tab="credit" onclick="window.app.setReportsTab('credit')">💵 Credit on Account</button>
+                </div>
+
+                <div class="report-tab-pane active" data-report-pane="financial">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 data-no-translate>💰 Financial Report &amp; Cash Flow</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>من تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="finReportFrom">
+                            </div>
+                            <div class="form-group">
+                                <label>إلى تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="finReportTo">
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.runFinancialReport()">🔍 استخراج التقرير</button>
+                            <button class="btn btn-outline" onclick="window.app.printFinancialReport()">🖨️ طباعة التقرير المالي</button>
+                            <button class="btn btn-success" data-no-translate onclick="window.app.exportFinancialReportToExcel()">📗 Export to Excel</button>
+                        </div>
+
+                        <div class="kpi-grid">
+                            <div class="kpi-card kpi-green">
+                                <div class="kpi-icon-wrapper">💵</div>
+                                <div class="kpi-details">
+                                    <h4 id="repTotalRevenue">$0.00</h4>
+                                    <p>إجمالي المقبوضات (الفترة)</p>
+                                    <small id="repTotalRevenueTrend" class="kpi-trend" data-no-translate></small>
+                                </div>
+                            </div>
+                            <div class="kpi-card kpi-blue">
+                                <div class="kpi-icon-wrapper">🧾</div>
+                                <div class="kpi-details">
+                                    <h4 id="repTotalBilled">$0.00</h4>
+                                    <p>إجمالي الفواتير الصادرة</p>
+                                </div>
+                            </div>
+                            <div class="kpi-card kpi-amber">
+                                <div class="kpi-icon-wrapper">🏷️</div>
+                                <div class="kpi-details">
+                                    <h4 id="repTotalDiscounts">$0.00</h4>
+                                    <p>إجمالي الخصومات</p>
+                                </div>
+                            </div>
+                            <div class="kpi-card kpi-purple">
+                                <div class="kpi-icon-wrapper">💸</div>
+                                <div class="kpi-details">
+                                    <h4 id="repTotalExpenses">$0.00</h4>
+                                    <p>إجمالي المصاريف</p>
+                                </div>
+                            </div>
+                            <div class="kpi-card kpi-blue">
+                                <div class="kpi-icon-wrapper">📊</div>
+                                <div class="kpi-details">
+                                    <h4 id="repNetIncome">$0.00</h4>
+                                    <p>صافي الدخل</p>
+                                    <small id="repNetIncomeTrend" class="kpi-trend" data-no-translate></small>
+                                </div>
+                            </div>
+                            <div class="kpi-card kpi-cyan" data-no-translate>
+                                <div class="kpi-icon-wrapper">💵</div>
+                                <div class="kpi-details">
+                                    <h4 id="repTotalCredit">$0.00</h4>
+                                    <p>Credit on Account (all patients)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="finRevenueChart" style="margin:22px 0; padding:16px; background:#f8fafc; border-radius:var(--radius-md); border:1px solid var(--border);"></div>
+
+                        <h4 style="margin:25px 0 10px 0; font-size:1.1rem; font-weight:800;">سجل المقبوضات والدفعات خلال الفترة:</h4>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>رقم الإيصال</th>
+                                        <th>التاريخ</th>
+                                        <th>اسم المريض</th>
+                                        <th>المبلغ المقبوض</th>
+                                        <th>طريقة الدفع</th>
+                                        <th>ملاحظات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="financialLedgerTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="expenses">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 data-no-translate>💸 Clinic Expenses</h3>
+                        <div style="display:flex; gap:10px; align-items:center;">
+                            <button class="btn btn-success" data-no-translate onclick="window.app.exportExpensesToExcel()">📗 Export to Excel</button>
+                            <button class="btn btn-primary" onclick="window.app.openNewExpenseModal()">➕ إضافة مصروف</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <input type="text" id="expensesSearchInput" placeholder="🔍 بحث في وصف المصروف أو الملاحظات..." oninput="window.app.renderExpensesTable()" style="width:100%; margin-bottom:12px;">
+                        <small style="color:var(--text-muted); display:block; margin-bottom:12px;">القائمة أدناه تعرض مصاريف نفس الفترة المحددة أعلاه بتقرير الحسابات.</small>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>الوصف</th>
+                                        <th>المبلغ</th>
+                                        <th>ملاحظات</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expensesTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="registrations">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 data-no-translate>🧑‍⚕️ New Patient Registrations Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>من تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="regReportFrom">
+                            </div>
+                            <div class="form-group">
+                                <label>إلى تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="regReportTo">
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.runPatientRegistrationsReport()">🔍 استخراج التقرير</button>
+                            <button class="btn btn-outline" onclick="window.app.printPatientRegistrationsReport()">🖨️ طباعة التقرير</button>
+                            <button class="btn btn-success" data-no-translate onclick="window.app.exportPatientRegistrationsToExcel()">📗 Export to Excel</button>
+                        </div>
+                        <div style="margin-bottom:14px; font-weight:800; color:var(--text-main);">عدد المرضى الجدد خلال الفترة: <span id="regReportCount" style="color:var(--primary);">0</span></div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>رقم الملف</th>
+                                        <th>اسم المريض</th>
+                                        <th>تاريخ التسجيل</th>
+                                        <th>رقم الهاتف</th>
+                                        <th>وصل عن طريق</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="regReportTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="procedures">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 data-no-translate>📊 Procedure Type Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>من تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="procReportFrom">
+                            </div>
+                            <div class="form-group">
+                                <label>إلى تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="procReportTo">
+                            </div>
+                            <div class="form-group">
+                                <label>نوع الإجراء:</label>
+                                <select id="procReportCondition" onchange="window.app.runProcedureTypeReport()"></select>
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.runProcedureTypeReport()">🔍 استخراج التقرير</button>
+                            <button class="btn btn-outline" onclick="window.app.printProcedureTypeReport()">🖨️ طباعة التقرير</button>
+                            <button class="btn btn-success" onclick="window.app.printProcedureTypeReport(true)">📄 Export PDF</button>
+                            <button class="btn btn-success" data-no-translate onclick="window.app.exportProcedureTypeReportToExcel()">📗 Export to Excel</button>
+                        </div>
+                        <div id="procReportSummary"></div>
+                        <div id="procReportChart" style="margin:6px 0 18px 0;"></div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead id="procReportTableHead">
+                                    <!-- Dynamic: summary-by-category or per-patient detail -->
+                                </thead>
+                                <tbody id="procReportTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="ledger">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 data-no-translate>📋 Daily Income &amp; Expenses Ledger</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>من تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="ledgerReportFrom">
+                            </div>
+                            <div class="form-group">
+                                <label>إلى تاريخ:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="ledgerReportTo">
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.runDailyLedgerReport()">🔍 استخراج التقرير</button>
+                            <button class="btn btn-success" onclick="window.app.exportDailyLedgerToExcel()">📊 تصدير إلى Excel</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>التاريخ</th>
+                                        <th>الدخل $</th>
+                                        <th>وصف المصروف</th>
+                                        <th>المصروف $</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ledgerReportTableBody">
+                                    <!-- Dynamic -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="ortho">
+                <div class="panel-card" data-no-translate>
+                    <div class="panel-header">
+                        <h3>🦷 Ortho Report</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:20px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>From Date:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="orthoReportFrom">
+                            </div>
+                            <div class="form-group">
+                                <label>To Date:</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="orthoReportTo">
+                            </div>
+                            <div class="form-group">
+                                <label>DR 1 fixed amount ($):</label>
+                                <input type="number" id="orthoDr1Fixed" min="0" step="0.01" placeholder="e.g. 200" style="width:140px;" oninput="window.app.onOrthoSplitChanged()">
+                            </div>
+                            <div class="form-group">
+                                <label>DR 1 share of the rest (%):</label>
+                                <input type="number" id="orthoDr1Pct" min="0" max="100" step="0.01" value="35" style="width:140px;" oninput="window.app.onOrthoSplitChanged()">
+                            </div>
+                            <div class="form-group">
+                                <label>Patient:</label>
+                                <select id="orthoReportPatient" onchange="window.app.runOrthoReport()" style="min-width:240px;"></select>
+                            </div>
+                            <button class="btn btn-primary" onclick="window.app.runOrthoReport()">🔍 Generate Report</button>
+                            <button class="btn btn-outline" onclick="window.app.printOrthoReport()">🖨️ Print</button>
+                            <button class="btn btn-success" onclick="window.app.exportOrthoReportToExcel()">📗 Export to Excel</button>
+                        </div>
+                        <div id="orthoReportOutput"></div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="general">
+                <div class="panel-card" data-no-translate>
+                    <div class="panel-header">
+                        <h3>🔎 General Report — search &amp; filter everything</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:16px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>Records about:</label>
+                                <select id="gpDataset" onchange="window.app.setGeneralDataset(this.value)" style="min-width:240px;"></select>
+                            </div>
+                            <div class="form-group" style="flex:1; min-width:220px;">
+                                <label>Search in all columns:</label>
+                                <input type="text" id="gpSearch" placeholder="🔍 Type anything…" autocomplete="off" oninput="window.app.onGeneralFilterInput()">
+                            </div>
+                            <button class="btn btn-outline" onclick="window.app.clearGeneralFilters()">✖ Clear filters</button>
+                            <button class="btn btn-success" onclick="window.app.exportGeneralReportToExcel()">📗 Export to Excel</button>
+                        </div>
+                        <details open style="margin-bottom:14px;">
+                            <summary style="cursor:pointer; font-weight:800; margin-bottom:10px;">Filters — every field is a searchable drop list (type or pick a value)</summary>
+                            <div id="gpFilters" class="gp-filters"></div>
+                        </details>
+                        <div id="gpCount" style="margin-bottom:10px;"></div>
+                        <div class="table-responsive" style="max-height:65vh; overflow:auto;">
+                            <table>
+                                <thead id="gpHead"></thead>
+                                <tbody id="gpBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="due">
+                <div class="panel-card" data-no-translate>
+                    <div class="panel-header">
+                        <h3>💰 Due Amounts — patients with a balance</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:16px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group">
+                                <label>Source:</label>
+                                <select id="dueReportSource" onchange="window.app.runDueReport()" style="min-width:220px;">
+                                    <option value="all">Invoices + Ortho</option>
+                                    <option value="invoices">Invoices only</option>
+                                    <option value="ortho">Ortho only</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="flex:1; min-width:200px;">
+                                <label>Search name / phone:</label>
+                                <input type="text" id="dueReportSearch" placeholder="🔍 Type to filter…" autocomplete="off" oninput="window.app.runDueReport()">
+                            </div>
+                            <button class="btn btn-outline" onclick="window.app.printDueReport()">🖨️ Print</button>
+                            <button class="btn btn-success" onclick="window.app.exportDueReportToExcel()">📗 Export to Excel</button>
+                        </div>
+                        <div id="dueReportCount" style="margin-bottom:12px;"></div>
+                        <div id="dueReportOutput"></div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="report-tab-pane" data-report-pane="credit">
+                <div class="panel-card" data-no-translate>
+                    <div class="panel-header">
+                        <h3>💵 Credit on Account — patients who overpaid</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:flex; gap:15px; align-items:flex-end; flex-wrap:wrap; margin-bottom:16px; background:#f8fafc; padding:18px; border-radius:var(--radius-md); border:1px solid var(--border);">
+                            <div class="form-group" style="flex:1; min-width:200px;">
+                                <label>Search name / phone:</label>
+                                <input type="text" id="creditReportSearch" placeholder="🔍 Type to filter…" autocomplete="off" oninput="window.app.runCreditReport()">
+                            </div>
+                            <button class="btn btn-outline" onclick="window.app.printCreditReport()">🖨️ Print</button>
+                            <button class="btn btn-success" onclick="window.app.exportCreditReportToExcel()">📗 Export to Excel</button>
+                        </div>
+                        <div id="creditReportCount" style="margin-bottom:12px;"></div>
+                        <div id="creditReportOutput"></div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- 8. SETTINGS & ZERO-DATA-LOSS BACKUP -->
+            <!-- ========================================== -->
+            <section id="tab-settings" class="tab-pane">
+                <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                    
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>🏥 معلومات وترويسة العيادة</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form onsubmit="event.preventDefault(); window.app.saveClinicSettings();">
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>اسم العيادة:</label>
+                                    <input type="text" id="settingClinicName" required>
+                                </div>
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>اسم الطبيب / الطبيبة:</label>
+                                    <input type="text" id="settingDoctorName" required>
+                                </div>
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>الاختصاص الطبي:</label>
+                                    <input type="text" id="settingSpecialty">
+                                </div>
+                                <div class="form-group" style="margin-bottom:12px;">
+                                    <label>رقم الهاتف:</label>
+                                    <input type="text" id="settingPhone">
+                                </div>
+                                <div class="form-group" style="margin-bottom:18px;">
+                                    <label>العنوان والمقر:</label>
+                                    <input type="text" id="settingAddress">
+                                </div>
+                                <div class="form-group" style="margin-bottom:18px;">
+                                    <label>لغة الواجهة:</label>
+                                    <select id="settingLanguage" onchange="window.app.setInterfaceLanguage(this.value)">
+                                        <option value="ar">العربية</option>
+                                        <option value="en">English</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom:18px;">
+                                    <label>مظهر الواجهة:</label>
+                                    <select id="settingTheme" onchange="window.app.setTheme(this.value)">
+                                        <option value="light">فاتح (Light)</option>
+                                        <option value="dark">داكن (Dark)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom:18px;">
+                                    <label data-no-translate>ثيم لوحة التحكم (Dashboard theme):</label>
+                                    <div class="theme-swatches" id="themeSwatches" data-no-translate>
+                                        <button type="button" class="theme-swatch" data-palette="plum" onclick="window.app.setPalette('plum')"><span class="sw" style="background:linear-gradient(90deg,#2f1c36 50%,#a63d6f 50%);"></span>Plum</button>
+                                        <button type="button" class="theme-swatch" data-palette="ocean" onclick="window.app.setPalette('ocean')"><span class="sw" style="background:linear-gradient(90deg,#12324f 50%,#0284c7 50%);"></span>Ocean</button>
+                                        <button type="button" class="theme-swatch" data-palette="teal" onclick="window.app.setPalette('teal')"><span class="sw" style="background:linear-gradient(90deg,#0f3b38 50%,#0d9488 50%);"></span>Teal</button>
+                                        <button type="button" class="theme-swatch" data-palette="emerald" onclick="window.app.setPalette('emerald')"><span class="sw" style="background:linear-gradient(90deg,#14392a 50%,#059669 50%);"></span>Emerald</button>
+                                        <button type="button" class="theme-swatch" data-palette="indigo" onclick="window.app.setPalette('indigo')"><span class="sw" style="background:linear-gradient(90deg,#26226a 50%,#4f46e5 50%);"></span>Indigo</button>
+                                        <button type="button" class="theme-swatch" data-palette="slate" onclick="window.app.setPalette('slate')"><span class="sw" style="background:linear-gradient(90deg,#1a2438 50%,#334155 50%);"></span>Slate</button>
+                                        <button type="button" class="theme-swatch" data-palette="sunset" onclick="window.app.setPalette('sunset')"><span class="sw" style="background:linear-gradient(90deg,#452010 50%,#ea580c 50%);"></span>Sunset</button>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:18px;">
+                                    <label>اللون الرئيسي للواجهة:</label>
+                                    <div style="display:flex; gap:10px; align-items:center;">
+                                        <input type="color" id="settingPrimaryColor" value="#0284c7" oninput="window.app.setPrimaryColor(this.value)" style="width:56px; height:38px; padding:2px; cursor:pointer; border:1.5px solid var(--border);">
+                                        <button type="button" class="btn btn-outline btn-sm" onclick="window.app.resetPrimaryColor()">↺ إعادة الافتراضي</button>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width:100%;">💾 حفظ الإعدادات</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel-card" style="border: 2px solid var(--success);">
+                        <div class="panel-header" style="background:#f0fdf4;">
+                            <h3 style="color:#166534;">🛡️ النسخ الاحتياطي والاستعادة (Backup &amp; Restore)</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p style="font-size:0.9rem; color:var(--text-main); margin-bottom:16px; line-height:1.7;">
+                                يتم حفظ كافة البيانات محلياً وبشكل آمن داخل قاعدة بيانات متطورة على جهازك. لضمان عدم ضياع أي سجل أو ملف طبي في حال تعطل الكمبيوتر، اضغط على الزر أدناه لتنزيل ملف النسخة الاحتياطية وحفظه على فلاشة أو قرص خارجي:
+                            </p>
+                            <button class="btn btn-success" style="width:100%; margin-bottom:14px; font-size:1rem; padding:12px;" onclick="window.app.downloadFullBackup()">
+                                💾 تنزيل نسخة احتياطية كاملة (Backup.json)
+                            </button>
+                            <label style="display:flex; align-items:flex-start; gap:8px; margin-bottom:18px; cursor:pointer; line-height:1.6;" data-no-translate>
+                                <input type="checkbox" id="settingAutoBackup" checked style="width:auto; margin-top:5px;" onchange="window.app.setAutoBackupEnabled(this.checked)">
+                                <span><strong>Automatic daily backup</strong> — the first time the app is opened each day, a backup file is saved to your Downloads folder by itself. Copy that folder to a flash drive / Google Drive from time to time.</span>
+                            </label>
+
+                            <hr style="border:none; border-top:1px solid var(--border); margin:18px 0;">
+
+                            <label style="font-weight:700; margin-bottom:8px; display:block;">تصدير كل بيانات العيادة إلى ملف Excel (للقراءة والمراجعة فقط):</label>
+                            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px; line-height:1.6;">هذا الملف للاطّلاع بأداة تعرفينها (Excel) — لا يُستخدم للاستعادة، فقط ملف Backup.json أعلاه يصلح لذلك.</p>
+                            <button class="btn btn-outline" style="width:100%;" onclick="window.app.exportFullDatabaseToExcel()">📗 تصدير قاعدة البيانات كاملة (Excel)</button>
+
+                            <hr style="border:none; border-top:1px solid var(--border); margin:18px 0;">
+                            
+                            <label style="font-weight:700; margin-bottom:8px; display:block;">استعادة البيانات من ملف نسخة احتياطية سابقة:</label>
+                            <input type="file" accept=".json" onchange="window.app.restoreBackupFromFile(this)" style="width:100%; padding:8px;">
+                            <small style="color:var(--text-muted); display:block; margin-top:6px;">اختر ملف الـ Backup ليتم استرجاع كافة السجلات فوراً.</small>
+                            <small id="lastBackupInfo" style="display:block; margin-top:12px; font-weight:700; color:var(--text-main);"></small>
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>🧾 كتالوج الخدمات والأسعار</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p style="font-size:.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:15px;">أضف الخدمات وأسعارها أو عدّلها هنا. تظهر تلقائياً في قائمة «إضافة إجراء للخطة العلاجية».</p>
+                            <button class="btn btn-primary" style="width:100%;" onclick="window.app.openServicesCatalogModal()">إدارة الخدمات والأسعار</button>
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>🔒 الرمز السري للبرنامج</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p style="font-size:.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:15px;">أضف اسماً واحداً مع رمز سري (PIN) لحماية البرنامج عند فتحه.</p>
+                            <button class="btn btn-primary" style="width:100%;" onclick="window.app.openManageStaffModal()">إدارة حسابات الموظفين</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODALS -->
+    <!-- ========================================== -->
+
+    <!-- 1. Tooth Modal -->
+    <div id="toothActionModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>🦷 تشخيص وإجراء السن رقم: <span id="modalToothNumDisplay" style="color:var(--primary);">--</span></h3>
+                <button class="modal-close-btn" onclick="window.chartManager.closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label data-no-translate>Session Date:</label>
+                    <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="toothSessionDate">
+                </div>
+
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label>الحالة السريرية للسن (Condition):</label>
+                    <div style="display:flex; gap:8px; align-items:flex-start; flex-wrap:wrap;">
+                        <input type="text" id="toothConditionSearch" placeholder="🔍 Search procedure..." oninput="window.app.filterToothConditionOptions(this.value)" style="flex:1 1 0; min-width:120px; max-width:50%;" autocomplete="off">
+                        <select id="toothConditionSelect" onchange="window.app.onToothConditionChanged(this.value); window.chartManager.onConditionSelectChanged(this.value)" style="flex:1 1 0; min-width:120px; max-width:50%;"></select>
+                    </div>
+                    <div id="toothCountWrap" style="margin-top:8px; display:flex; align-items:center; gap:8px;">
+                        <label style="margin:0; white-space:nowrap;" data-no-translate>Number of teeth:</label>
+                        <select id="toothCountSelect" onchange="window.app.onToothCountChanged()" style="width:90px;">
+                            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                            <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+                        </select>
+                        <small id="toothCountHint" style="color:var(--text-muted);"></small>
+                    </div>
+                    <div id="toothPickerBox" style="display:none; margin-top:8px;"></div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label>الأسطح المتأثرة (Surfaces):</label>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:5px;">
+                        <label><input type="checkbox" id="surf_O"> O (إطباقي)</label>
+                        <label><input type="checkbox" id="surf_M"> M (إنسي)</label>
+                        <label><input type="checkbox" id="surf_D"> D (وحشي)</label>
+                        <label><input type="checkbox" id="surf_B"> B (دهليزي)</label>
+                        <label><input type="checkbox" id="surf_L"> <span id="surfLLabel">L (لساني)</span></label>
+                    </div>
+                </div>
+
+                <div id="bridgeSection" class="bridge-section" style="display:none;">
+                    <label data-no-translate>Bridge teeth — click a tooth to cycle: Abutment (A) → Pontic (P) → none</label>
+                    <div id="bridgeTeethPicker" class="bridge-picker"></div>
+                    <small id="bridgeSummary"></small>
+                </div>
+
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label>التكلفة التقديرية للعلاج ($):</label>
+                    <input type="number" id="toothCostInput" placeholder="مثال: 75">
+                </div>
+                <div class="form-group" id="toothPlanStatusWrap" style="margin-bottom:15px;" data-no-translate>
+                    <label>Completion Status:</label>
+                    <select id="toothPlanStatus">
+                        <option value="in_progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات الطبيب حول هذا السن:</label>
+                    <textarea id="toothNotesInput" rows="2" placeholder="ملاحظات سريرية..."></textarea>
+                </div>
+
+                <div id="toothVisitNotes" style="margin-top:15px; padding:12px; border:1px solid var(--border); border-radius:8px;">
+                    <label style="font-weight:700;" data-no-translate>📝 Visit notes (no cost)</label>
+                    <div style="display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;" data-no-translate>
+                        <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="toothNoteDate" style="width:150px; min-width:150px;">
+                        <input type="text" id="toothNoteText" placeholder="Note for this visit..." style="flex:1; min-width:140px;" onkeydown="if(event.key==='Enter'){event.preventDefault(); window.app.addToothNote();}">
+                        <button type="button" id="toothNoteAddBtn" class="btn btn-primary btn-sm" onclick="window.app.addToothNote()">➕ Add</button>
+                    </div>
+                    <div id="toothNotePlanWrap" style="display:none; margin-top:8px; align-items:center; gap:8px;" data-no-translate>
+                        <label style="margin:0; white-space:nowrap;">For procedure:</label>
+                        <select id="toothNotePlan" style="flex:1; min-width:0;"></select>
+                    </div>
+                    <div id="toothNotesList" style="margin-top:10px;" data-no-translate></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" onclick="window.chartManager.resetActiveTooth()">إعادة للوضع السليم</button>
+                <button type="button" class="btn btn-success" data-no-translate onclick="window.chartManager.saveActiveToothAndInvoice()">🧾 Save & Create Invoice</button>
+                <button type="button" class="btn btn-primary" onclick="window.chartManager.saveActiveTooth()">حفظ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Patient Modal -->
+    <div id="patientModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3 id="patientModalTitle">➕ إضافة مريض جديد</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('patientModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="patientForm" onsubmit="event.preventDefault(); window.app.savePatient();">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>رقم الملف:</label>
+                            <input type="text" id="patientCodeDisplay" readonly style="background:#f1f5f9; font-weight:bold;">
+                        </div>
+                        <div class="form-group">
+                            <label>اسم المريض الكامل <span class="req">*</span>:</label>
+                            <input type="text" id="patientName" placeholder="الاسم الثلاثي" required>
+                        </div>
+                        <div class="form-group">
+                            <label>تاريخ الميلاد:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="patientDob">
+                        </div>
+                        <div class="form-group">
+                            <label>العمر:</label>
+                            <input type="number" id="patientAge" placeholder="العمر">
+                        </div>
+                        <div class="form-group">
+                            <label>الجنس:</label>
+                            <select id="patientGender">
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف الأساسي:</label>
+                            <input type="text" id="patientPhone" placeholder="00961...">
+                        </div>
+                        <div class="form-group">
+                            <label>رقم هاتف بديل:</label>
+                            <input type="text" id="patientAltPhone">
+                        </div>
+                        <div class="form-group">
+                            <label>جهة الاتصال للطوارئ:</label>
+                            <input type="text" id="patientEmergency" placeholder="الاسم ورقم الهاتف">
+                        </div>
+                        <div class="form-group">
+                            <label>وصل عن طريق (Referred By):</label>
+                            <input type="text" id="patientReferredBy" placeholder="اسم المريض المُحيل، طبيب، إنستغرام...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>العنوان:</label>
+                            <input type="text" id="patientAddress" placeholder="المدينة، الشارع...">
+                        </div>
+                    </div>
+
+                    <!-- Medical Alerts -->
+                    <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:var(--radius-md); padding:16px; margin-top:16px;">
+                        <h4 style="color:#166534; margin-bottom:10px; font-weight:800;">🩺 السجل الطبي والتنبيهات الصحية (Medical Alerts)</h4>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:10px;">
+                            <label><input type="checkbox" id="med_diabetes"> مرض السكري</label>
+                            <label><input type="checkbox" id="med_bp"> ضغط الدم</label>
+                            <label><input type="checkbox" id="med_heart"> أمراض القلب</label>
+                            <label><input type="checkbox" id="med_bleeding"> مشاكل سيولة / نزيف</label>
+                            <label><input type="checkbox" id="med_allergy"> حساسية أدوية (بنسلين...)</label>
+                            <label><input type="checkbox" id="med_pregnancy"> حالة حمل / إرضاع</label>
+                            <label><input type="checkbox" id="med_hepatitis"> كبد / كلى</label>
+                            <label><input type="checkbox" id="med_smoking"> مدخن</label>
+                            <label><input type="checkbox" id="med_cancer"> <span data-no-translate>Cancer</span></label>
+                            <label><input type="checkbox" id="med_chemo"> <span data-no-translate>Chemotherapy</span></label>
+                        </div>
+                        <div class="form-group" style="margin-top:12px;">
+                            <label>تفاصيل الحساسية والأدوية الدائمة:</label>
+                            <input type="text" id="medAllergyDetails" placeholder="مثال: حساسية بنسلين، يتناول مميع أسبرين...">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top:15px;">
+                        <label>ملاحظات عامة:</label>
+                        <textarea id="patientNotes" rows="2" placeholder="ملاحظات إضافية..."></textarea>
+                    </div>
+
+                    <div class="modal-footer" style="padding-bottom:0; padding-left:0; padding-right:0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('patientModal')">إلغاء</button>
+                        <button type="submit" class="btn btn-primary">💾 حفظ بيانات المريض</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. New Lab Case Modal (ToothLogic) -->
+    <div id="newLabCaseModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="labCaseModalTitle">🧪 تسجيل وإرسال طلب لمختبر الأسنان</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('newLabCaseModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="labCaseForm" onsubmit="event.preventDefault(); window.app.saveLabCase();">
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>رقم الطلب:</label>
+                        <input type="text" id="labCaseNumberDisplay" readonly style="background:#f1f5f9; font-weight:bold;">
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>المريض:</label>
+                        <select id="labPatientSelect" required></select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>اسم مختبر الأسنان:</label>
+                        <input type="text" id="labNameInput" required placeholder="مثال: مختبر النخبة لتركيبات الأسنان">
+                    </div>
+                    <div class="form-grid" style="margin-bottom:12px;">
+                        <div class="form-group">
+                            <label>نوع التركيبة / العمل:</label>
+                            <input type="text" id="labWorkTypeInput" required placeholder="مثال: تاج زيركون عالي الشفافية، إيماكس، تقويم شفاف...">
+                        </div>
+                        <div class="form-group">
+                            <label>رقم السن (اختياري):</label>
+                            <input type="number" id="labToothNumInput" placeholder="مثال: 16">
+                        </div>
+                    </div>
+                    <div class="form-grid" style="margin-bottom:12px;">
+                        <div class="form-group">
+                            <label>درجة اللون (Shade Guide):</label>
+                            <input type="text" id="labShadeInput" placeholder="مثال: A1, A2, A3.5, BL3...">
+                        </div>
+                        <div class="form-group">
+                            <label>التكلفة التقديرية ($):</label>
+                            <input type="number" id="labCostInput" placeholder="مثال: 45">
+                        </div>
+                    </div>
+                    <div class="form-grid" style="margin-bottom:12px;">
+                        <div class="form-group">
+                            <label>تاريخ الإرسال للمختبر:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="labSentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>تاريخ الاستلام والتسليم المتوقع:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="labDueDate">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>ملاحظات فنية للمختبر:</label>
+                        <textarea id="labNotesInput" rows="2" placeholder="ملاحظات حول الإطباق، الهيكل، أو التشكيل..."></textarea>
+                    </div>
+                    <div class="modal-footer" style="padding:0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('newLabCaseModal')">إلغاء</button>
+                        <button type="submit" class="btn btn-primary" id="labCaseSubmitBtn">💾 حفظ وإرسال للمختبر</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ortho treatment ledger: a running Due Amount, paid down installment by installment -->
+    <div id="orthoModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3 data-no-translate>🦷 Ortho Treatment Ledger</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('orthoModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" style="margin-bottom:16px; max-width:220px;" data-no-translate>
+                    <label>Due Amount ($):</label>
+                    <input type="number" id="orthoDueAmountInput" min="0" step="0.01" placeholder="0" onchange="window.app.updateOrthoDueAmount(this.value)">
+                </div>
+                <form id="orthoEntryForm" onsubmit="event.preventDefault(); window.app.addOrthoEntry();" class="form-grid" style="margin-bottom:16px; align-items:end;" data-no-translate>
+                    <div class="form-group"><label>Date:</label><input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="orthoEntryDate" required></div>
+                    <div class="form-group"><label>Tooth:</label><input type="text" id="orthoEntryTooth" placeholder="e.g. 16 / Upper Arch"></div>
+                    <div class="form-group"><label>Treatment:</label><input type="text" id="orthoEntryTreatment" placeholder="e.g. Bracket adjustment"></div>
+                    <div class="form-group"><label>Paid ($):</label><input type="number" id="orthoEntryPaid" min="0" step="0.01" placeholder="0"></div>
+                    <div class="form-group"><label>Note:</label><input type="text" id="orthoEntryNote" placeholder="e.g. Patient did not show up"></div>
+                    <div class="form-group"><button type="submit" class="btn btn-primary">➕ Add</button></div>
+                </form>
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+                    <div id="orthoSummary" style="font-weight:800; display:flex; gap:24px; flex-wrap:wrap;" data-no-translate></div>
+                    <button type="button" class="btn btn-success btn-sm" data-no-translate onclick="window.app.exportOrthoLedgerToExcel()">📗 Export to Excel</button>
+                </div>
+                <div class="table-responsive">
+                    <table data-no-translate>
+                        <thead><tr><th>Date</th><th>Tooth</th><th>Treatment</th><th>Paid</th><th>Note</th><th>Total (Remaining)</th><th>Actions</th></tr></thead>
+                        <tbody id="orthoEntriesTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications list modal -->
+    <div id="notificationsListModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3 data-no-translate>🔔 Notifications</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('notificationsListModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table data-no-translate>
+                        <thead><tr><th>Date &amp; Time</th><th>Reason</th><th>Patient</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody id="notificationsListTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reminder popup: stays open until the user clicks OK -->
+    <div id="notificationReminderModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="notificationReminderTitle" data-no-translate>🔔 Reminder</h3>
+            </div>
+            <div class="modal-body">
+                <p id="notificationReminderMessage" style="font-weight:700; font-size:1.02rem; line-height:1.6;"></p>
+                <div class="modal-footer" style="padding:0; margin-top:18px;">
+                    <button type="button" class="btn btn-primary" data-no-translate onclick="window.app.acknowledgeCurrentReminder()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services catalog modal -->
+    <div id="servicesCatalogModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3>🧾 إدارة الخدمات والأسعار</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('servicesCatalogModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+                    <small style="color:var(--text-muted);">قائمة الإجراءات الموحّدة (Endo, Comp, Ext...) مطابقة لشجرة الأسنان — عدّل الأسعار متى حبيت.</small>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="window.app.loadRecommendedServicesCatalog()">🔄 مزامنة مع القائمة الموحّدة</button>
+                </div>
+                <form id="catalogServiceForm" onsubmit="event.preventDefault(); window.app.saveCatalogService();" class="form-grid" style="margin-bottom:20px; align-items:end;">
+                    <input type="hidden" id="catalogServiceId">
+                    <div class="form-group"><label>اسم الخدمة:</label><input id="catalogServiceName" required placeholder="مثال: حشوة ضوئية"></div>
+                    <div class="form-group"><label>الفئة (اختياري):</label><input id="catalogServiceCategory" placeholder="مثال: حشوات"></div>
+                    <div class="form-group"><label>السعر ($):</label><input id="catalogServicePrice" type="number" min="0" step="0.01" required placeholder="50"></div>
+                    <div class="form-group"><button type="submit" class="btn btn-success">💾 حفظ الخدمة</button></div>
+                </form>
+                <div class="table-responsive"><table><thead><tr><th>الخدمة</th><th>الفئة</th><th>السعر</th><th>إجراءات</th></tr></thead><tbody id="servicesCatalogTableBody"></tbody></table></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Clinical Visit Modal -->
+    <div id="visitModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="visitModalTitle">🩺 Procedure &amp; Visit</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('visitModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="visitForm" onsubmit="event.preventDefault(); window.app.saveVisit();">
+                    <div id="visitProcSection" style="margin-bottom:14px; padding:12px; border:1px solid var(--border); border-radius:8px;">
+                        <label style="font-weight:700;">🦷 الإجراء (من قائمة الأسعار) — اختياري:</label>
+                        <input type="text" id="visitProcSearch" placeholder="🔍 Search procedure..." oninput="window.app.filterVisitProcOptions(this.value)" style="margin:6px 0;" autocomplete="off">
+                        <select id="visitProcCondition" onchange="window.app.onVisitProcChanged(this.value)"></select>
+                        <div id="visitXrayCountWrap" style="margin-top:8px; display:none;">
+                            <label>عدد الأشعة (X-Ray count):</label>
+                            <select id="visitXrayCount" onchange="window.app.onVisitXrayCountChanged()">
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+                            </select>
+                        </div>
+                        <div style="margin-top:8px;">
+                            <label>التكلفة ($):</label>
+                            <input type="number" id="visitProcCost" min="0" step="0.01" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>تاريخ الجلسة:</label>
+                        <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="visitDate" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>رقم السن المرتبط بالجلسة (اختياري):</label>
+                        <input type="text" id="visitToothSearch" placeholder="🔍 Search tooth number..." oninput="window.app.filterVisitToothOptions(this.value)" style="margin-bottom:6px;" autocomplete="off">
+                        <select id="visitToothNum" onchange="window.app.refreshVisitToothStatus()">
+                            <option value="">جلسة عامة / لا يوجد سن محدد</option>
+                        </select>
+                        <div id="visitToothCondition" style="margin-top:7px; padding:9px 12px; background:#f8fafc; border:1px solid var(--border); border-radius:7px; font-weight:700; color:var(--primary);">اختر رقم السن لعرض الحالة السريرية الحالية من مخطط الأسنان.</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>الشكوى وسبب الزيارة (Chief Complaint):</label>
+                        <input type="text" id="visitChiefComplaint" placeholder="ألم مع البارد، كسر حشوة...">
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>الإجراء المنجز (Procedure Done):</label>
+                        <input type="text" id="visitProcedure" oninput="this.dataset.userEdited=this.value?1:''" placeholder="تنظيف قنوات، وضع حشوة ضوئية...">
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>ملاحظات الطبيب:</label>
+                        <textarea id="visitDoctorNotes" rows="2" placeholder="ملاحظات سريرية أو تعليمات..."></textarea>
+                    </div>
+                    <div id="visitToothNotes" style="display:none; margin-bottom:12px; padding:10px; border:1px solid var(--border); border-radius:8px;" data-no-translate>
+                        <label style="font-weight:700;">📝 Notes</label>
+                        <div style="display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;">
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="visitNoteDate" style="width:120px;">
+                            <input type="text" id="visitNoteText" placeholder="Add a note..." style="flex:1; min-width:140px;" onkeydown="if(event.key==='Enter'){event.preventDefault(); window.app.addVisitToothNote();}">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="window.app.addVisitToothNote()">➕ Add</button>
+                        </div>
+                        <div id="visitNotesList" style="margin-top:8px;"></div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>موعد المتابعة القادم (التاريخ والوقت):</label>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="visitNextDate" style="flex:1; min-width:180px;">
+                            <input type="time" id="visitNextTime" style="flex:0 0 150px;">
+                        </div>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:700; margin-top:8px; cursor:pointer;" data-no-translate>
+                            <input type="checkbox" id="visitNextReminderCheck" style="width:auto;"> 🔔 Notification
+                        </label>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>إرفاق صورة أشعة (X-Ray Attachment):</label>
+                        <input type="file" id="visitAttachmentFile" accept="image/*">
+                        <small id="visitAttachmentExisting" style="color:var(--text-muted); display:none; margin-top:5px;"></small>
+                    </div>
+                    <div class="modal-footer" style="padding:0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('visitModal')">إلغاء</button>
+                        <button type="button" id="visitSaveInvoiceBtn" class="btn btn-success" data-no-translate onclick="window.app.saveVisit({ thenInvoice: true })">🧾 Save & Create Invoice</button>
+                        <button type="submit" id="visitSubmitBtn" class="btn btn-primary">💾 حفظ الجلسة</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Create Invoice Modal -->
+    <div id="createInvoiceModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3 id="createInvoiceModalTitle">🧾 إنشاء فاتورة علاج جديدة</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('createInvoiceModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="invoiceForm" onsubmit="event.preventDefault(); window.app.saveInvoice();">
+                    <div class="form-grid" style="margin-bottom:15px;">
+                        <div class="form-group">
+                            <label>رقم الفاتورة:</label>
+                            <input type="text" id="invNumberDisplay" readonly style="background:#f1f5f9; font-weight:bold;">
+                        </div>
+                        <div class="form-group">
+                            <label>تاريخ الفاتورة:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="invDate" required>
+                        </div>
+                    </div>
+
+                    <label style="font-weight:700; margin-bottom:8px; display:block;">بنود الفاتورة والخدمات المقدمة:</label>
+                    <div id="invoiceItemsContainer"></div>
+                    <button type="button" class="btn btn-outline btn-sm" style="margin-bottom:15px;" onclick="window.app.addInvoiceItemRow('', 0, '', '', true)">➕ إضافة بند آخر</button>
+
+                    <div style="background:#f8fafc; padding:15px; border-radius:8px; margin-bottom:15px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                            <span>المجموع الفرعي:</span>
+                            <strong id="invSubtotalDisplay">$0.00</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                            <span>الخصم الممنوح ($):</span>
+                            <input type="number" id="invDiscount" value="0" style="width:120px; padding:6px;">
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:1.2rem; color:var(--primary); border-top:1px solid #ddd; padding-top:8px;">
+                            <strong>المجموع الصافي:</strong>
+                            <strong id="invNetTotalDisplay">$0.00</strong>
+                        </div>
+                    </div>
+
+                    <!-- Payment lives on the same page as the invoice -->
+                    <div id="invPaymentSection" class="pay-section" data-no-translate>
+                        <h4>💵 Payment</h4>
+                        <div id="invPreviousPayments"></div>
+                        <div id="payEditBanner" class="pay-edit-banner" style="display:none;">
+                            <span></span>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="window.app.cancelPaymentEdit()">Cancel edit</button>
+                        </div>
+                        <div id="invPaySummary" class="pay-summary"></div>
+                        <div class="form-grid" style="margin-bottom:12px;">
+                            <div class="form-group">
+                                <label>Amount paid ($)</label>
+                                <div style="display:flex; gap:8px;">
+                                    <input type="number" id="paymentAmount" min="0" step="0.01" placeholder="0.00" style="flex:1; min-width:0;">
+                                    <button type="button" class="btn btn-success btn-sm" onclick="window.app.closeAccount()" title="Fill in the full remaining amount">✔ Full Payment</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Apply payment to</label>
+                                <select id="paymentTarget"></select>
+                            </div>
+                            <div class="form-group">
+                                <label>Payment date</label>
+                                <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="paymentDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Method</label>
+                                <select id="paymentMethod">
+                                    <option value="cash">Cash</option>
+                                    <option value="card">Card</option>
+                                    <option value="transfer">Transfer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Receipt note (optional)</label>
+                            <input type="text" id="paymentNotes" placeholder="e.g. partial payment">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" style="padding:16px 0 0 0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('createInvoiceModal')">إلغاء</button>
+                        <button type="button" class="btn btn-primary" onclick="window.app.saveInvoice(true)" data-no-translate>🖨️ Save &amp; Print</button>
+                        <button type="submit" class="btn btn-success" data-no-translate>💾 Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invoice details and payment history -->
+    <div id="invoiceDetailsModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3>🧾 تفاصيل الفاتورة والدفعات</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('invoiceDetailsModal')">✕</button>
+            </div>
+            <div class="modal-body" id="invoiceDetailsContent"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" onclick="window.app.closeModal('invoiceDetailsModal')">إغلاق</button>
+                <button type="button" class="btn btn-outline" id="invoiceDetailsExportBtn">📄 تصدير PDF</button>
+                <button type="button" class="btn btn-success" id="invoiceDetailsPaymentBtn">💵 إضافة دفعة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Prescription Modal -->
+    <div id="prescriptionModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3 id="prescriptionModalTitle">💊 تحرير وصفة طبية (Rx Prescription)</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('prescriptionModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="prescriptionForm" onsubmit="event.preventDefault(); window.app.savePrescription();">
+                    <div class="form-grid" style="margin-bottom:15px;">
+                        <div class="form-group">
+                            <label>تاريخ الوصفة:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="rxDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>التشخيص / الحالة الطبية:</label>
+                            <input type="text" id="rxDiagnosis" placeholder="مثال: ألم والتهاب حاد بعد الخلع">
+                        </div>
+                    </div>
+
+                    <label style="font-weight:700; margin-bottom:8px; display:block;">قائمة الأدوية والجرعات:</label>
+                    <div id="rxMedsContainer"></div>
+                    <button type="button" class="btn btn-outline btn-sm" style="margin-bottom:15px;" onclick="window.app.addMedicationRow()">➕ إضافة دواء آخر</button>
+
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>ملاحظات إضافية للمريض:</label>
+                        <input type="text" id="rxDoctorNotes" placeholder="تعليمات الاستعمال...">
+                    </div>
+
+                    <div style="background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:var(--radius-md); padding:16px; margin-bottom:15px;">
+                        <h4 style="color:#0369a1; margin-bottom:10px; font-weight:800;">Medical Prescription &amp; X-ray</h4>
+                        <div class="form-group">
+                            <label>نوع الأشعة (اختياري):</label>
+                            <select id="rxXrayType">
+                                <option value="">-- بدون --</option>
+                                <option value="Panoramic Xray">Panoramic Xray</option>
+                                <option value="Cephalometric Xray">Cephalometric Xray</option>
+                                <option value="CBCT for upper right quadrant">CBCT for upper right quadrant</option>
+                                <option value="CBCT for upper left quadrant">CBCT for upper left quadrant</option>
+                                <option value="CBCT for lower left quadrant">CBCT for lower left quadrant</option>
+                                <option value="CBCT for lower right quadrant">CBCT for lower right quadrant</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" style="padding:0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('prescriptionModal')">إلغاء</button>
+                        <button type="button" class="btn btn-success" onclick="window.app.savePrescription(true)" data-no-translate>🖨️ Save &amp; Print</button>
+                        <button type="submit" class="btn btn-primary">💾 حفظ الوصفة</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. Appointment Modal -->
+    <div id="appointmentModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="appointmentModalTitle">📅 حجز موعد جديد</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('appointmentModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentForm" onsubmit="event.preventDefault(); window.app.saveAppointment();">
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>المريض:</label>
+                        <div style="display:flex; gap:8px; margin-bottom:6px;">
+                            <input type="text" id="apptPatientSearch" placeholder="🔍 Name..." autocomplete="off" oninput="window.app.filterApptPatientOptions()" style="flex:1; min-width:0; max-width:160px;">
+                            <input type="text" id="apptPhoneSearch" inputmode="tel" placeholder="📞 Phone..." autocomplete="off" oninput="window.app.filterApptPatientOptions()" style="flex:1; min-width:0; max-width:160px;">
+                        </div>
+                        <div style="display:flex; gap:12px; align-items:center;">
+                            <select id="apptPatientSelect" required style="flex:1; min-width:0; max-width:240px;"></select>
+                            <label id="apptNewPatientWrap" style="display:flex; align-items:center; gap:6px; font-weight:700; white-space:nowrap; cursor:pointer;">
+                                <input type="checkbox" id="apptNewPatientCheck" onchange="window.app.toggleApptNewPatient()" style="width:auto; padding:0;">
+                                <span>New Patient</span>
+                            </label>
+                        </div>
+                        <div id="apptNewPatientFields" style="display:none; margin-top:8px; gap:10px;">
+                            <input type="text" id="apptNewPatientName" placeholder="Patient full name" style="flex:1; min-width:0; max-width:180px;">
+                            <input type="tel" id="apptNewPatientPhone" placeholder="📞 Phone number" style="flex:1; min-width:0;">
+                        </div>
+                    </div>
+                    <div class="form-grid" style="margin-bottom:12px;">
+                        <div class="form-group">
+                            <label>التاريخ:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="apptDate" required onchange="window.app.checkAppointmentConflict()">
+                        </div>
+                        <div class="form-group">
+                            <label>الوقت:</label>
+                            <input type="time" id="apptTime" required onchange="window.app.checkAppointmentConflict()">
+                        </div>
+                        <div class="form-group">
+                            <label>المدة:</label>
+                            <select id="apptDuration" onchange="window.app.checkAppointmentConflict()">
+                                <option value="15">15 min</option>
+                                <option value="30" selected>30 min</option>
+                                <option value="45">45 min</option>
+                                <option value="60">1 hour</option>
+                                <option value="75">1 h 15</option>
+                                <option value="90">1 h 30</option>
+                                <option value="105">1 h 45</option>
+                                <option value="120">2 hours</option>
+                                <option value="150">2 h 30</option>
+                                <option value="180">3 hours</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="apptConflictWarning" style="display:none; margin-bottom:12px; padding:10px 14px; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; border-radius:6px; font-size:0.88rem; line-height:1.5;"></div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>حالة الموعد:</label>
+                        <select id="apptStatus">
+                            <option value="confirmed">مؤكد</option>
+                            <option value="pending">قيد الانتظار</option>
+                            <option value="arrived">وصل</option>
+                            <option value="completed">مكتمل ✅</option>
+                            <option value="cancelled">ملغي ❌</option>
+                        </select>
+                        <label style="display:flex; align-items:center; gap:6px; font-weight:700; margin-top:8px; cursor:pointer;" data-no-translate>
+                            <input type="checkbox" id="apptReminderCheck" style="width:auto;"> 🔔 Notification
+                        </label>
+                    </div>
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>نوع الإجراء / الغرض من الموعد:</label>
+                        <input type="text" id="apptProcedure" placeholder="مثال: جلسة علاج عصب ثانية، تركيب تاج...">
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>ملاحظات:</label>
+                        <input type="text" id="apptNotes" placeholder="ملاحظات تنظيمية...">
+                    </div>
+                    <div class="modal-footer" style="padding:0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('appointmentModal')">إلغاء</button>
+                        <button type="submit" id="apptSubmitBtn" class="btn btn-primary">📅 تأكيد الحجز</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Staff Login Gate -->
+    <div id="staffLoginModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>🔒 تسجيل الدخول</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" style="margin-bottom:15px;">
+                    <label>اختر اسمك:</label>
+                    <select id="staffLoginSelect"></select>
+                </div>
+                <div class="form-group">
+                    <label>الرمز السري (PIN):</label>
+                    <input type="password" id="staffLoginPin" inputmode="numeric" maxlength="6" placeholder="••••" onkeydown="if(event.key==='Enter') window.app.attemptStaffLogin();">
+                </div>
+                <div id="staffLoginError" style="color:var(--danger); font-weight:700; margin-top:8px; display:none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" style="width:100%;" onclick="window.app.attemptStaffLogin()">دخول</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. Manage Staff Modal -->
+    <div id="manageStaffModal" class="modal-backdrop">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3>👤 إدارة حسابات الموظفين</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('manageStaffModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="staffForm" onsubmit="event.preventDefault(); window.app.saveStaff();" class="form-grid" style="margin-bottom:20px; align-items:end;">
+                    <input type="hidden" id="staffId">
+                    <div class="form-group"><label>اسم الموظف:</label><input id="staffName" required placeholder="مثال: سارة"></div>
+                    <div class="form-group"><label>الرمز السري (PIN):</label><input id="staffPin" type="password" inputmode="numeric" maxlength="6" required placeholder="4 أرقام على الأقل"></div>
+                    <div class="form-group"><button type="submit" class="btn btn-success">💾 حفظ الموظف</button></div>
+                </form>
+                <div class="table-responsive"><table><thead><tr><th>الاسم</th><th>إجراءات</th></tr></thead><tbody id="staffTableBody"></tbody></table></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. Expense Modal -->
+    <div id="expenseModal" class="modal-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="expenseModalTitle">💸 إضافة مصروف</h3>
+                <button class="modal-close-btn" onclick="window.app.closeModal('expenseModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="expenseForm" onsubmit="event.preventDefault(); window.app.saveExpense();">
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>وصف المصروف:</label>
+                        <input type="text" id="expenseDescription" required placeholder="مثال: فاتورة كهرباء، شراء مواد طبية...">
+                    </div>
+                    <div class="form-grid" style="margin-bottom:12px;">
+                        <div class="form-group">
+                            <label>المبلغ ($):</label>
+                            <input type="number" id="expenseAmount" min="0.01" step="0.01" required placeholder="100">
+                        </div>
+                        <div class="form-group">
+                            <label>تاريخ المصروف:</label>
+                            <input type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" class="date-input" id="expenseDate" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>ملاحظات (اختياري):</label>
+                        <input type="text" id="expenseNotes">
+                    </div>
+                    <div class="modal-footer" style="padding:0;">
+                        <button type="button" class="btn btn-outline" onclick="window.app.closeModal('expenseModal')">إلغاء</button>
+                        <button type="submit" class="btn btn-primary">💾 حفظ المصروف</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printable Content Area -->
+    <div id="printableContent" class="print-sheet" style="display:none;"></div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/vendor/exceljs.min.js"></script>
+    <script src="js/vendor/html2canvas.min.js"></script>
+    <script src="js/vendor/jspdf.umd.min.js"></script>
+    <script src="js/logo-data.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/reports-extra.js"></script>
+</body>
+</html>

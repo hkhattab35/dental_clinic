@@ -1,0 +1,306 @@
+/* Interface translation layer. Patient records are deliberately not translated. */
+window.DentFlowI18n = (() => {
+    const en = {
+        'لوحة التحكم': 'Today', 'المدة:': 'Duration:', 'وصل': 'Arrived', 'مجدول': 'Planned', 'قيد التنفيذ': 'In Progress', 'مكتمل ✅': 'Completed ✅',
+        'الحالة:': 'Status:', 'ملاحظة (اختياري):': 'Note (optional):', 'النسخ الاحتياطي والاستعادة (Backup & Restore)': 'Backup & Restore', 'مظهر الواجهة:': 'Appearance:', 'فاتح (Light)': 'Light', 'داكن (Dark)': 'Dark', 'المرضى': 'Patients', 'الملف السريري': 'Clinical Record',
+        'المواعيد': 'Appointments', 'المختبر': 'Laboratory', 'التعليمات': 'Instructions',
+        'التقارير المالية': 'Financial Reports', 'الإعدادات': 'Settings', 'بحث سريع عن مريض...': 'Quick patient search...',
+        'حفظ نسخة احتياطية (Backup)': 'Save Backup', 'إضافة مريض جديد': 'Add New Patient',
+        'إجمالي المرضى المسجلين': 'Total Registered Patients', 'مواعيد اليوم': "Today's Appointments",
+        'مقبوضات اليوم': "Today's Receipts", 'طلبات مختبر قيد التنفيذ': 'Pending Laboratory Cases',
+        'جدول مواعيد اليوم': "Today's Schedule", 'الوقت': 'Time', 'اسم المريض': 'Patient Name',
+        'ترتيب أبجدي من A إلى Z ومن Z إلى A': 'Sort alphabetically A-Z / Z-A',
+        'ترتيب حسب العمر': 'Sort by age',
+        'لا يوجد دواء': 'No medication',
+        'الإجراء المطلوب': 'Requested Procedure', 'حالة الموعد': 'Appointment Status', 'إجراء سريع': 'Quick Action',
+        'حجز موعد جديد': 'Book New Appointment', 'المرضى الحاليين': 'Current Patients', 'الأرشيف': 'Archive',
+        'الاسم الكامل': 'Full Name', 'رقم الهاتف': 'Phone Number', 'العمر': 'Age', 'الجنس': 'Gender',
+        'تاريخ التسجيل': 'Registration Date', 'الحالة': 'Status', 'إجراءات': 'Actions',
+        'فتح الملف': 'Open Record', 'تعديل': 'Edit', 'أرشفة': 'Archive', 'استعادة': 'Restore', 'حذف': 'Delete',
+        'بيانات المريض الأساسية': 'Patient Details', 'خطة العلاج': 'Treatment Plan', 'الجلسات السريرية': 'Clinical Sessions',
+        'الفواتير وسندات القبض (Billing & Payments)': 'Invoices & Receipts', 'إنشاء فاتورة جديدة': 'Create New Invoice',
+        'إجمالي المطالبات:': 'Total Billed:', 'إجمالي المسدد:': 'Total Paid:', 'الرصيد المتبقي:': 'Outstanding Balance:',
+        'رقم الفاتورة': 'Invoice No.', 'التاريخ': 'Date', 'المجموع الصافي': 'Net Total', 'المسدد': 'Paid', 'المتبقي': 'Remaining',
+        'سداد': 'Pay', 'إضافة دفعة': 'Add Payment', 'طباعة': 'Print', 'مسددة': 'Paid', 'متبقي': 'Outstanding',
+        'تصدير PDF': 'Export PDF',
+        'الوصفات الطبية': 'Prescriptions', 'إضافة إجراء مخصص': 'Add Custom Procedure', 'تسجيل جلسة جديدة': 'Record New Session',
+        'طلبات المختبر': 'Laboratory Cases', 'طلب مختبر جديد': 'New Laboratory Case',
+        'معلومات وترويسة العيادة': 'Clinic Information & Letterhead', 'اسم العيادة:': 'Clinic Name:',
+        'اسم الطبيب / الطبيبة:': 'Doctor Name:', 'الاختصاص الطبي:': 'Medical Specialty:', 'رقم الهاتف:': 'Phone Number:',
+        'العنوان والمقر:': 'Address:', 'حفظ الإعدادات': 'Save Settings',
+        'النسخ الاحتياطي والأمان (Zero Data Loss)': 'Backup & Security', 'تنزيل نسخة احتياطية كاملة (Backup.json)': 'Download Full Backup (Backup.json)',
+        'استعادة البيانات من ملف نسخة احتياطية سابقة:': 'Restore Data from a Previous Backup:',
+        'كتالوج الخدمات والأسعار': 'Services & Pricing Catalog', 'إدارة الخدمات والأسعار': 'Manage Services & Prices',
+        'إضافة إجراء للخطة العلاجية': 'Add Procedure to Treatment Plan', 'اختيار سريع من الخدمات:': 'Quick Service Selection:',
+        'اسم الإجراء أو العلاج:': 'Procedure / Treatment Name:', 'رقم السن (اختياري):': 'Tooth Number (optional):',
+        'التكلفة ($):': 'Cost ($):', 'إضافة للخطة': 'Add to Plan',
+        'إدارة الخدمات والأسعار': 'Manage Services & Prices', 'اسم الخدمة:': 'Service Name:', 'الفئة (اختياري):': 'Category (optional):',
+        'السعر ($):': 'Price ($):', 'حفظ الخدمة': 'Save Service', 'الخدمة': 'Service', 'الفئة': 'Category',
+        'الإجراء (من قائمة الأسعار) — اختياري:': 'Procedure (from price list) — optional:', 'التكلفة ($):': 'Cost ($):',
+        'تسجيل جلسة سريرية جديدة': 'Record New Clinical Session', 'تاريخ الجلسة:': 'Session Date:',
+        'رقم السن المرتبط بالجلسة (اختياري):': 'Related Tooth Number (optional):', 'الشكوى وسبب الزيارة (Chief Complaint):': 'Chief Complaint / Reason for Visit:',
+        'الإجراء المنجز (Procedure Done):': 'Procedure Performed:', 'ملاحظات الطبيب:': 'Doctor Notes:',
+        'موعد المتابعة القادم (التاريخ والوقت):': 'Next Follow-up (Date & Time):', 'إرفاق صورة أشعة (X-Ray Attachment):': 'Attach X-Ray Image:',
+        'حفظ الجلسة': 'Save Session', 'إنشاء فاتورة علاج جديدة': 'Create New Treatment Invoice', 'رقم الفاتورة:': 'Invoice Number:',
+        'تاريخ الفاتورة:': 'Invoice Date:', 'بنود الفاتورة والخدمات المقدمة:': 'Invoice Items & Services:', 'إضافة بند آخر': 'Add Item',
+        'المجموع الفرعي:': 'Subtotal:', 'الخصم:': 'Discount:', 'المجموع الصافي:': 'Net Total:', 'اعتماد الفاتورة': 'Save Invoice',
+        'تسجيل دفعة مالية (سند قبض)': 'Record Payment (Receipt)', 'المبلغ المدفوع ($):': 'Amount Paid ($):',
+        'تاريخ الدفع:': 'Payment Date:', 'طريقة الدفع:': 'Payment Method:', 'ملاحظات السند:': 'Receipt Notes:',
+        'نقداً (Cash)': 'Cash', 'بطاقة بنكية / فيزا (Card)': 'Card', 'تحويل مالي (Transfer)': 'Bank Transfer',
+        'حفظ وسداد': 'Save Payment', 'إلغاء': 'Cancel', 'إغلاق': 'Close',
+        'تفاصيل الفاتورة والدفعات': 'Invoice Details & Payments', 'بنود العلاج': 'Treatment Items', 'سجل سندات القبض': 'Receipt History',
+        'رقم السند': 'Receipt No.', 'الطريقة': 'Method', 'الملاحظات': 'Notes',
+        'العربية': 'Arabic', 'English': 'English', 'لغة الواجهة:': 'Interface Language:',
+        'اختر من كتالوج الخدمات...': 'Select from services catalog...', 'جلسة عامة / لا يوجد سن محدد': 'General session / no specific tooth',
+        'سن': 'Tooth', 'عام': 'General', 'مؤكد': 'Confirmed', 'مكتمل ✅': 'Completed ✅', 'ملغي': 'Cancelled',
+        'لا توجد خدمات بعد.': 'No services yet.', 'لا توجد دفعات مسجلة بعد.': 'No payments recorded yet.',
+        'لا توجد فواتير منشأة لهذا المريض.': 'No invoices have been created for this patient.',
+        'لا توجد زيارات مسجلة للمريض.': 'No clinical sessions recorded for this patient.',
+        'لا توجد مواعيد مسجلة لليوم. استخدم زر "حجز موعد" لإضافة مواعيد.': 'No appointments scheduled today. Use “Book New Appointment” to add one.',
+        'تم حفظ الخدمة في الكتالوج.': 'Service saved to the catalog.', 'تم حفظ الفاتورة بنجاح.': 'Invoice saved successfully.',
+        'تم تسجيل الدفعة بنجاح.': 'Payment recorded successfully.', 'يرجى إدخال مبلغ دفع صالح.': 'Please enter a valid payment amount.'
+        , 'الرئيسية والعيادة': 'Home & Clinic', 'سجل المرضى': 'Patient Directory', 'الملف السريري والأسنان': 'Patient File',
+        'الخدمات والمختبر': 'Services & Laboratory', 'الحسابات والتقارير': 'Accounts & Reports', 'المالية والأمان': 'Finance & Security',
+        'دليل وسجل المرضى والملفات الطبية': 'Patient Directory & Medical Records',
+        'السجل الطبي والتنبيهات الصحية (Medical Alerts)': 'Medical Record & Health Alerts',
+        'الخطة العلاجية المجدولة (Treatment Plan)': 'Scheduled Treatment Plan',
+        'سجل الجلسات السريرية والملاحظات (Clinical Visits)': 'Clinical Sessions & Notes',
+        'مخطط الأسنان التفاعلي (Interactive Dental Chart)': 'Interactive Dental Chart',
+        'تشخيص وإجراء السن رقم:': 'Tooth Diagnosis & Procedure No.:',
+        'جدول ومواعيد اليوم (Today\'s Encounters)': "Today’s Appointments", 'جدول المواعيد والحجوزات': 'Appointments & Bookings',
+        'تتبع طلبات ومقاسات مختبر الأسنان (Lab & Aligner Tracker)': 'Dental Laboratory & Aligner Tracker',
+        'تسجيل وإرسال طلب لمختبر الأسنان': 'Create & Send a Dental Laboratory Request',
+        'طلبات المختبر والمقاسات الخاصة بالمريض (Lab Cases)': 'Patient Laboratory Cases & Measurements',
+        'مكتبة تعليمات ما بعد العلاج وإرشادات المرضى': 'Post-Treatment Instructions & Patient Guidance',
+        'التقرير المالي وحركات الصندوق': 'Financial Report & Cash Movements', 'الإعدادات والنسخ الاحتياطي': 'Settings & Backup',
+        'إجراءات الملف': 'Record Actions', 'تقرير علاج المريض': 'Patient Treatment Report', 'تسجيل زيارة سريرية': 'Record Clinical Visit',
+        'إضافة دواء آخر': 'Add Another Medication', 'تحرير وصفة طبية (Rx Prescription)': 'Create Prescription (Rx)',
+        'الوصفة الطبية والأشعة (Medical Prescription & X-ray)': 'Medical Prescription & X-ray', 'حفظ الوصفة': 'Save Prescription',
+        'اسم المريض الكامل': 'Full Patient Name', 'العمر / الجنس': 'Age / Gender', 'العنوان:': 'Address:',
+        'الهاتف:': 'Phone:', 'تاريخ الميلاد:': 'Date of Birth:', 'الجنس:': 'Gender:', 'ذكر': 'Male', 'أنثى': 'Female',
+        'ملاحظات عامة:': 'General Notes:', 'تفاصيل الحساسية والأدوية الدائمة:': 'Allergy & Long-Term Medication Details:',
+        'حالة حمل / إرضاع': 'Pregnancy / Breastfeeding', 'مرض السكري': 'Diabetes', 'ضغط الدم': 'Blood Pressure',
+        'أمراض القلب': 'Heart Disease', 'مشاكل سيولة / نزيف': 'Bleeding / Clotting Issues', 'كبد / كلى': 'Liver / Kidney',
+        'مدخن': 'Smoker', 'حساسية أدوية (بنسلين...)': 'Medication Allergy (Penicillin...)',
+        'رقم الملف': 'Record No.', 'رقم الملف:': 'Record No.:', 'الزيارات': 'Visits', 'حالة الأسنان': 'Teeth Status',
+        'الأسطح': 'Surfaces', 'التكلفة المتوقعة': 'Estimated Cost', 'حالة التنفيذ': 'Completion Status',
+        'جلسة عامة / لا يوجد سن محدد': 'General Session / No Specific Tooth', 'الأسطح المتأثرة (Surfaces):': 'Affected Surfaces:',
+        'الحالة السريرية للسن (Condition):': 'Tooth Clinical Condition:', 'ملاحظات الطبيب حول هذا السن:': 'Doctor Notes for This Tooth:',
+        'التكلفة التقديرية للعلاج ($):': 'Estimated Treatment Cost ($):', 'إعادة للوضع السليم': 'Reset to Healthy',
+        'حفظ وإضافة للخطة': 'Save & Add to Plan', 'حفظ': 'Save', 'الشكوى (Chief Complaint)': 'Chief Complaint',
+        'الإجراء المنجز (Procedure)': 'Procedure Performed', 'الموعد القادم': 'Next Appointment', 'صورة الأشعة': 'X-Ray Image',
+        'اسم مختبر الأسنان:': 'Dental Laboratory Name:', 'نوع العمل واللون': 'Work Type & Shade', 'نوع التركيبة / العمل:': 'Restoration / Work Type:',
+        'درجة اللون (Shade Guide):': 'Shade Guide:', 'موعد الاستلام': 'Due Date', 'تاريخ الإرسال للمختبر:': 'Laboratory Dispatch Date:',
+        'تاريخ الاستلام والتسليم المتوقع:': 'Expected Receipt & Delivery Date:', 'ملاحظات فنية للمختبر:': 'Technical Notes for Laboratory:',
+        'حفظ وإرسال للمختبر': 'Save & Send to Laboratory', 'رقم الطلب': 'Request No.', 'اسم المختبر': 'Laboratory Name',
+        'نوع العمل': 'Work Type', 'اللون (Shade)': 'Shade', 'تاريخ الإرسال': 'Dispatch Date', 'تاريخ التسليم': 'Delivery Date',
+        'تحديث الحالة': 'Update Status', 'في المختبر': 'In Laboratory', 'تم الاستلام': 'Received', 'تم التركيب للمريض ✅': 'Fitted for Patient ✅',
+        'تعليمات ما بعد العلاج': 'Post-Treatment Instructions', 'قائمة الأدوية والجرعات:': 'Medication List & Dosages:',
+        'التشخيص / الحالة الطبية:': 'Diagnosis / Medical Condition:', 'ملاحظات إضافية للمريض:': 'Additional Patient Notes:',
+        'تاريخ الوصفة:': 'Prescription Date:', 'من تاريخ:': 'From Date:', 'إلى تاريخ:': 'To Date:',
+        'استخراج التقرير': 'Generate Report', 'طباعة التقرير المالي': 'Print Financial Report', 'إجمالي المقبوضات (الفترة)': 'Total Receipts (Period)',
+        'إجمالي الفواتير الصادرة': 'Total Invoices Issued', 'إجمالي الخصومات': 'Total Discounts',
+        'سجل المقبوضات والدفعات خلال الفترة:': 'Receipts & Payments During Period:', 'رقم الإيصال': 'Receipt Number',
+        'المبلغ المقبوض': 'Amount Received', 'طريقة الدفع': 'Payment Method', 'نقدي': 'Cash', 'بطاقة': 'Card', 'تحويل': 'Transfer',
+        'المرضى الحاليين': 'Current Patients', 'الأرشيف 📦': 'Archive 📦', 'اختر مريضاً للبدء': 'Select a Patient to Begin',
+        'إغلاق': 'Close', 'حذف الملف': 'Delete Record', 'تعديل البيانات': 'Edit Details', 'إرسال طلب للمختبر': 'Send Laboratory Request',
+        'حفظ بيانات المريض': 'Save Patient Details', 'مريض جديد': 'New Patient', 'حالة الموعد:': 'Appointment Status:',
+        'نوع الإجراء / الغرض من الموعد:': 'Procedure Type / Appointment Purpose:', 'الوقت:': 'Time:', 'تأكيد الحجز': 'Confirm Booking',
+        'الخصم الممنوح ($):': 'Discount Given ($):', 'وصف الخدمة / العلاج': 'Service / Treatment Description', 'السعر': 'Price',
+        'كبسولة واحدة كل 8 ساعات بعد الأكل لمدة 5 أيام': 'One capsule every 8 hours after meals for 5 days',
+        'لغة الواجهة:': 'Interface Language:'
+        , 'سليم (Healthy)': 'Healthy', 'تسوس (Caries / Decay)': 'Caries / Decay', 'تسوس (Caries/Decay)': 'Caries / Decay',
+        'حشوة تجميلية (Composite / Filling)': 'Composite Filling', 'حشوة تجميلية (Filling)': 'Composite Filling',
+        'علاج عصب وسحب لب (Root Canal / Endo)': 'Root Canal Treatment', 'علاج عصب (Root Canal)': 'Root Canal Treatment',
+        'تلبيسة / تاج (Crown / Bridge)': 'Crown / Bridge', 'تلبيسة / تاج (Crown)': 'Crown',
+        'بحاجة لخلع (Needs Extraction)': 'Needs Extraction', 'مفقود / مخلوع (Missing Tooth)': 'Missing Tooth',
+        'مفقود / مخلوع (Missing)': 'Missing Tooth', 'زراعة سن (Dental Implant)': 'Dental Implant',
+        'كسر في السن (Fracture)': 'Tooth Fracture', 'مجدول': 'Planned', 'قيد التنفيذ': 'In Progress',
+        'قيد الانتظار': 'Pending', 'ملغي ❌': 'Cancelled ❌', 'غير محدد': 'Not specified', 'غير مسجل': 'Not recorded',
+        'بدون هاتف': 'No phone number', 'إتمام ✅': 'Complete ✅', 'تأكيد': 'Confirm',
+        'تاريخ الجلسة': 'Session Date', 'رقم السن': 'Tooth Number', 'الحالة السريرية للسن': 'Tooth Clinical Status',
+        'الشكوى': 'Chief Complaint', 'الإجراء المنجز': 'Procedure Performed', 'ملاحظات الطبيب': 'Doctor Notes',
+        'لا توجد طلبات مختبر حالية. انقر على "➕ طلب مختبر جديد".': 'No active laboratory requests. Click “New Laboratory Case” to add one.',
+        'لا توجد مواعيد مسجلة. انقر على "حجز موعد جديد".': 'No appointments found. Click “Book New Appointment” to add one.',
+        'لا توجد وصفات مسجلة للمريض.': 'No prescriptions recorded for this patient.',
+        'لا توجد خطط علاجية. انقر على أي سن في المخطط لتسجيل الإجراء أو أضف إجراءً مخصصاً.': 'No treatment plans. Click a tooth on the chart to record a procedure or add a custom procedure.',
+        'اختر رقم السن لعرض الحالة السريرية الحالية من مخطط الأسنان.': 'Select a tooth number to view its current clinical status from the dental chart.',
+        'انقر على أي سن لتحديد الحالة السريرية والأسطح وإضافته للخطة': 'Click any tooth to set its clinical status, surfaces, and add it to the plan.',
+        'المريض:': 'Patient:', 'المريض': 'Patient', 'التاريخ:': 'Date:', 'التاريخ': 'Date', 'ملاحظات:': 'Notes:', 'ملاحظات': 'Notes',
+        'رقم الهاتف الأساسي:': 'Primary Phone Number:', 'رقم هاتف بديل:': 'Alternative Phone Number:', 'جهة الاتصال للطوارئ:': 'Emergency Contact:',
+        'العمر:': 'Age:', 'الحالة:': 'Status:', 'نوع الإجراء:': 'Procedure Type:', 'التشخيص': 'Diagnosis',
+        'رقم السن (اختياري):': 'Tooth Number (Optional):', 'تاريخ الجلسة:': 'Session Date:', 'تاريخ الدفع:': 'Payment Date:', 'تاريخ الفاتورة:': 'Invoice Date:',
+        'حالة الموعد:': 'Appointment Status:', 'تاريخ الميلاد:': 'Date of Birth:', 'الجنس:': 'Gender:', 'العنوان:': 'Address:',
+        'الشكوى': 'Chief Complaint', 'الإجراء المنجز': 'Procedure Performed', 'الموعد القادم': 'Next Appointment',
+        'الأدوية الموصوفة والجرعات': 'Prescribed Medication & Dosage', 'ملاحظات عامة:': 'General Notes:',
+        'إضافة مريض جديد': 'Add New Patient', 'حفظ بيانات المريض': 'Save Patient Details', 'تعديل بيانات المريض': 'Edit Patient Details',
+        'اختر المريض...': 'Select a patient...', 'اختر ملف الـ Backup ليتم استرجاع كافة السجلات فوراً.': 'Choose a backup file to restore all records immediately.',
+        'استعادة': 'Restore', 'تعديل': 'Edit', 'حذف': 'Delete', 'طباعة': 'Print',
+        'إجراءات': 'Actions', 'إجراء سريع': 'Quick Action', 'إجراءات الملف': 'Record Actions',
+        'إضافة إجراء مخصص': 'Add Custom Procedure', 'إضافة إجراء للخطة العلاجية': 'Add Procedure to Treatment Plan',
+        'إضافة للخطة': 'Add to Plan', 'إضافة بند آخر': 'Add Another Item', 'إضافة دواء آخر': 'Add Another Medication',
+        'إرسال طلب للمختبر': 'Send Laboratory Request', 'حجز موعد جديد': 'Book New Appointment',
+        'تسجيل جلسة جديدة': 'Record New Session', 'تسجيل زيارة سريرية': 'Record Clinical Visit',
+        'إنشاء فاتورة جديدة': 'Create New Invoice', 'إنشاء فاتورة علاج جديدة': 'Create New Treatment Invoice',
+        'إدارة الخدمات والأسعار': 'Manage Services & Prices', 'حفظ الإعدادات': 'Save Settings', 'حفظ الخدمة': 'Save Service',
+        'حفظ الجلسة': 'Save Session', 'حفظ وسداد': 'Save Payment', 'اعتماد الفاتورة': 'Save Invoice',
+        'تأكيد الحجز': 'Confirm Booking', 'حفظ وإرسال للمختبر': 'Save & Send to Laboratory',
+        'اختيار سريع من الخدمات:': 'Quick Service Selection:', 'اسم الإجراء أو العلاج:': 'Procedure / Treatment Name:',
+        'التكلفة ($):': 'Cost ($):', 'السعر ($):': 'Price ($):', 'الفئة (اختياري):': 'Category (Optional):',
+        'الخدمة': 'Service', 'الفئة': 'Category', 'السعر': 'Price', 'التكلفة التقديرية ($):': 'Estimated Cost ($):',
+        'نوع التركيبة / العمل:': 'Restoration / Work Type:', 'درجة اللون (Shade Guide):': 'Shade Guide:',
+        'ملاحظات فنية للمختبر:': 'Laboratory Technical Notes:', 'تاريخ الإرسال': 'Dispatch Date', 'تاريخ التسليم': 'Delivery Date',
+        'رقم الطلب': 'Request No.', 'تحديث الحالة': 'Update Status', 'في المختبر': 'In Laboratory', 'تم الاستلام': 'Received',
+        'تم التركيب للمريض ✅': 'Fitted for Patient ✅', 'قيد الانتظار': 'Pending', 'مؤكد': 'Confirmed',
+        'مكتمل ✅': 'Completed ✅', 'ملغي ❌': 'Cancelled ❌', 'مجدول': 'Planned', 'قيد التنفيذ': 'In Progress',
+        'المالية والأمان': 'Finance & Security', 'الخدمات والمختبر': 'Services & Laboratory', 'الحسابات والتقارير': 'Accounts & Reports',
+        'من تاريخ:': 'From Date:', 'إلى تاريخ:': 'To Date:', 'استخراج التقرير': 'Generate Report',
+        'طباعة التقرير المالي': 'Print Financial Report', 'إجمالي المقبوضات (الفترة)': 'Total Receipts (Period)',
+        'إجمالي الفواتير الصادرة': 'Total Invoices Issued', 'إجمالي الخصومات': 'Total Discounts',
+        'رقم الإيصال': 'Receipt No.', 'المبلغ المقبوض': 'Amount Received', 'طريقة الدفع': 'Payment Method',
+        'نقداً (Cash)': 'Cash', 'بطاقة بنكية / فيزا (Card)': 'Card', 'تحويل مالي (Transfer)': 'Bank Transfer',
+        'الحالة السريرية للسن (Condition):': 'Tooth Clinical Condition:', 'الأسطح المتأثرة (Surfaces):': 'Affected Surfaces:',
+        'ملاحظات الطبيب حول هذا السن:': 'Doctor Notes for This Tooth:', 'التكلفة التقديرية للعلاج ($):': 'Estimated Treatment Cost ($):',
+        'إعادة للوضع السليم': 'Reset to Healthy', 'حفظ وإضافة للخطة': 'Save & Add to Plan',
+        'قائمة الأدوية والجرعات:': 'Medication List & Dosages:', 'التشخيص / الحالة الطبية:': 'Diagnosis / Medical Condition:',
+        'ملاحظات إضافية للمريض:': 'Additional Patient Notes:', 'تاريخ الوصفة:': 'Prescription Date:',
+        'معلومات وترويسة العيادة': 'Clinic Information & Letterhead', 'النسخ الاحتياطي والأمان (Zero Data Loss)': 'Backup & Security',
+        'لغة الواجهة:': 'Interface Language:', 'العربية': 'Arabic', 'المرضى الحاليين': 'Current Patients',
+        'الأرشيف 📦': 'Archive 📦', 'اختيار سريع من الخدمات': 'Quick Service Selection',
+        'يمكنك طباعة أي من هذه الإرشادات وتسليمها للمريض فور انتهاء الجلسة.': 'You can print these instructions and give them to the patient after the session.'
+        , 'الاسم الثلاثي': 'Full name', 'العمر': 'Age', 'الاسم ورقم الهاتف': 'Name and phone number',
+        'المدينة، الشارع...': 'City, street...', 'ملاحظات إضافية...': 'Additional notes...',
+        'مثال: حساسية بنسلين، يتناول مميع أسبرين...': 'Example: Penicillin allergy, taking aspirin blood thinner...',
+        'مثال: مختبر النخبة لتركيبات الأسنان': 'Example: Elite Dental Laboratory',
+        'مثال: تاج زيركون عالي الشفافية، إيماكس، تقويم شفاف...': 'Example: Zirconia crown, E.max, clear aligner...',
+        'مثال: 16': 'Example: 16', 'مثال: A1, A2, A3.5, BL3...': 'Example: A1, A2, A3.5, BL3...',
+        'مثال: تنظيف وتلميع أسنان': 'Example: Dental cleaning and polishing',
+        'مثال: 50': 'Example: 50', 'مثال: ألم والتهاب حاد بعد الخلع': 'Example: Acute pain and inflammation after extraction',
+        'مثال: دفعة تحت الحساب': 'Example: Payment on account', 'وصف الخدمة / العلاج': 'Service / treatment description',
+        'السعر': 'Price', 'أدخل اسم خدمة وسعراً صحيحاً.': 'Enter a valid service name and price.'
+        , 'السن': 'Tooth', 'جدول المواعيد': 'Appointments', 'مختبر الأسنان والمقاسات': 'Dental Laboratory & Measurements',
+        'تعليمات ما بعد العلاج': 'Post-Treatment Instructions', 'طبيبة الأسنان المعالجة': 'Attending Dentist',
+        'طب وجراحة الفم والأسنان': 'Oral & Dental Medicine and Surgery',
+        'بحث سريع بالاسم، رقم الملف، أو الهاتف...': 'Quick search by name, file number, or phone...',
+        'حفظ نسخة احتياطية كاملة من قاعدة البيانات لمنع أي ضياع': 'Save a full database backup to prevent any data loss',
+        'استعادة البيانات من نسخة سابقة': 'Restore data from a previous backup',
+        'فلترة بالاسم، رقم الهاتف، أو كود الملف (PAT-00001)...': 'Filter by name, phone number, or file code (PAT-00001)...',
+        'طباعة تقرير علاجي شامل ومفصل لتسليمه للمريض كملف خاص به': 'Print a comprehensive, detailed treatment report to give the patient as their own copy',
+        'حذف نهائي وشامل لملف المريض': 'Permanently and completely delete the patient record',
+        'الإجراء / العلاج': 'Procedure / Treatment', 'تحرير وصفة طبية': 'Create Prescription',
+        'خيارات': 'Options', 'نوع الإجراء': 'Procedure Type', 'المختبر': 'Laboratory',
+        'O (إطباقي)': 'O (Occlusal)', 'M (إنسي)': 'M (Mesial)', 'D (وحشي)': 'D (Distal)',
+        'B (دهليزي)': 'B (Buccal)', 'L (لساني)': 'L (Lingual)',
+        'مثال: 75': 'Example: 75', 'مثال: 45': 'Example: 45',
+        'ملاحظات سريرية...': 'Clinical notes...', 'ملاحظات سريرية أو تعليمات...': 'Clinical notes or instructions...',
+        'يتم حفظ كافة البيانات محلياً وبشكل آمن داخل قاعدة بيانات متطورة على جهازك. لضمان عدم ضياع أي سجل أو ملف طبي في حال تعطل الكمبيوتر، اضغط على الزر أدناه لتنزيل ملف النسخة الاحتياطية وحفظه على فلاشة أو قرص خارجي:':
+            'All data is saved locally and securely in an advanced database on your device. To make sure no record or medical file is ever lost if your computer fails, click the button below to download the backup file and save it to a flash drive or external disk:',
+        'أضف الخدمات وأسعارها أو عدّلها هنا. تظهر تلقائياً في قائمة «إضافة إجراء للخطة العلاجية».': 'Add or edit services and their prices here. They appear automatically in the "Add Procedure to Treatment Plan" list.',
+        'ملاحظات حول الإطباق، الهيكل، أو التشكيل...': 'Notes about occlusion, framework, or shaping...',
+        'مثال: حشوة ضوئية': 'Example: Composite filling', 'مثال: حشوات': 'Example: Fillings',
+        'ألم مع البارد، كسر حشوة...': 'Pain with cold, broken filling...',
+        'تنظيف قنوات، وضع حشوة ضوئية...': 'Canal cleaning, composite filling placement...',
+        'تعليمات الاستعمال...': 'Usage instructions...',
+        'مثال: جلسة علاج عصب ثانية، تركيب تاج...': 'Example: Second root canal session, crown fitting...',
+        'ملاحظات تنظيمية...': 'Scheduling notes...'
+        , 'تسجيل الدخول': 'Login', 'اختر اسمك:': 'Your Name:', 'الرمز السري (PIN):': 'PIN Code:', 'دخول': 'Log In',
+        'حسابات الموظفين والمساءلة': 'Staff Accounts & Accountability',
+        'أضف حسابات لموظفي العيادة مع رمز سري خاص بكل موظف، لتسجيل من قام بإضافة أو تعديل كل سجل.': 'Add accounts for clinic staff, each with their own PIN, so every record shows who created or edited it.',
+        'إدارة حسابات الموظفين': 'Manage Staff Accounts', 'اسم الموظف:': 'Staff Name:', 'اسم الموظف': 'Staff Name', 'الدور (اختياري):': 'Role (Optional):',
+        'حفظ الموظف': 'Save Staff', 'الدور': 'Role', 'الموظف': 'Staff', 'تبديل المستخدم': 'Switch User',
+        'مثال: سارة': 'Example: Sarah', 'مثال: مساعدة طبيب أسنان': 'Example: Dental Assistant',
+        '4 أرقام على الأقل': 'At least 4 digits', 'لا يوجد موظفون بعد.': 'No staff accounts yet.',
+        'حذف حساب الموظف': 'Delete Staff Account', 'حفظ نسخة احتياطية الآن': 'Save Backup Now',
+        'تذكيرني لاحقاً': 'Remind Me Later', 'عرض القائمة': 'List View', 'عرض التقويم': 'Calendar View',
+        'اليوم': 'Today', 'انقر على خلية فارغة لحجز موعد بذلك التوقيت': 'Click an empty cell to book an appointment at that time.',
+        'السابق': 'Prev', 'التالي': 'Next', 'صفحة': 'Page',
+        'وصل عن طريق (Referred By):': 'Referred By:', 'اسم المريض المُحيل، طبيب، إنستغرام...': "Referring patient's name, doctor, Instagram...",
+        'وصل عن طريق': 'Referred by', 'وصل عن طريق:': 'Referred by:',
+        'تقرير تسجيل المرضى الجدد': 'New Patient Registrations Report',
+        'عدد المرضى الجدد خلال الفترة:': 'Number of new patients during this period:',
+        'طباعة التقرير': 'Print Report',
+        'لا يوجد مرضى مسجلين خلال هذه الفترة.': 'No patients registered during this period.'
+        , 'حشوة (Composite Filling / Comp)': 'Composite Filling (Comp)', 'سحب عصب (Root Canal / Endo)': 'Root Canal (Endo)',
+        'تنظيف (Scaling)': 'Scaling', 'تبييض (Whitening / Bleach)': 'Whitening (Bleach)',
+        'تلبيسة PFM (Crown - PFM)': 'Crown - PFM', 'تلبيسة زيركون (Crown - Zircon)': 'Crown - Zircon',
+        'تلبيسة على زرعة (Crown on Implant)': 'Crown on Implant', 'تلبيسة مؤقتة (Provisional Crown)': 'Provisional Crown',
+        'بلبوتومي (Pulpotomy)': 'Pulpotomy', 'بلبكتومي (Pulpectomy)': 'Pulpectomy', 'تلبيسة معدنية (SSC)': 'SSC',
+        'سيلانت (Sealant)': 'Sealant', 'فلورايد (Fluoride)': 'Fluoride',
+        'دعامة (Post - Cast)': 'Post - Cast', 'دعامة (Post - Fiber)': 'Post - Fiber', 'دعامة (Post - Screw)': 'Post - Screw',
+        'تركيب تلبيسة قديمة (Cementation - Old Crown)': 'Cementation - Old Crown',
+        'تركيب جسر قديم (Cementation - Old Bridge)': 'Cementation - Old Bridge',
+        'أشعة (X-Ray)': 'X-Ray', 'فليبر (Flipper)': 'Flipper', 'خلع (Extraction / Ext)': 'Extraction (Ext)',
+        'حشوات وعلاج عصب (Fillings & Endo)': 'Fillings & Endo', 'تلبيسات (Crowns)': 'Crowns', 'أطفال (Pedo)': 'Pedo',
+        'دعامات وتلبيس قديم (Post & Cementation)': 'Post & Cementation', 'أخرى (Other)': 'Other',
+        'إضافة مصروف': 'Add Expense', 'إدارة مصاريف العيادة': 'Manage Clinic Expenses',
+        'وصف المصروف:': 'Expense Description:', 'مثال: فاتورة كهرباء، شراء مواد طبية...': 'Example: Electricity bill, medical supplies purchase...',
+        'المبلغ ($):': 'Amount ($):', 'تاريخ المصروف:': 'Expense Date:', 'ملاحظات (اختياري):': 'Notes (optional):',
+        'حفظ المصروف': 'Save Expense', 'لا توجد مصاريف مسجلة بعد.': 'No expenses recorded yet.',
+        'الوصف': 'Description', 'إجمالي المصاريف': 'Total Expenses', 'صافي الدخل': 'Net Income',
+        'تم حفظ المصروف بنجاح.': 'Expense saved successfully.', 'تم حذف المصروف.': 'Expense deleted.',
+        'حذف هذا المصروف؟': 'Delete this expense?', 'يرجى إدخال وصف ومبلغ صحيح للمصروف.': 'Please enter a description and a valid amount for the expense.',
+        'قائمة الإجراءات الموحّدة (Endo, Comp, Ext...) مطابقة لشجرة الأسنان — عدّل الأسعار متى حبيت.': 'The unified procedure list (Endo, Comp, Ext...) matches the dental chart — edit prices anytime.',
+        'مزامنة مع القائمة الموحّدة': 'Sync with Unified List',
+        'القائمة أدناه تعرض مصاريف نفس الفترة المحددة أعلاه بتقرير الحسابات.': 'The list below shows expenses for the same period selected above in the accounts report.',
+        'الإجراء / العلاج:': 'Procedure / Treatment:',
+        'تقرير الإجراءات حسب النوع (Procedure Type Report)': 'Procedure Type Report',
+        'الكل (All)': 'All',
+        'لا توجد إجراءات مطابقة خلال هذه الفترة.': 'No matching procedures during this period.',
+        'العدد': 'Count', 'عدد المرضى': 'Patient Count', 'إجمالي التكلفة': 'Total Cost',
+        'النوع': 'Type', 'رقم السن': 'Tooth No.',
+        'سجل الدخل والمصاريف اليومي (Daily Income & Expenses Ledger)': 'Daily Income & Expenses Ledger',
+        'الدخل $': 'Income $', 'وصف المصروف': 'Expense Description', 'المصروف $': 'Expenses $',
+        'تصدير إلى Excel': 'Export to Excel', 'الإجمالي': 'Total',
+        'لا توجد حركات خلال هذه الفترة.': 'No activity during this period.',
+        'نوع الأشعة (اختياري):': 'X-Ray Type (Optional):', '-- بدون --': '-- None --',
+        'المبلغ': 'Amount', 'بحث في وصف المصروف أو الملاحظات...': 'Search expense description or notes...'
+    };
+    // Direct ar/en pair helper for dynamically-built strings (table rows, toasts,
+    // printed reports) that mix static words with patient data and can never be
+    // matched as a whole by the dictionary-based DOM walker below.
+    const T = (ar, en) => (language === 'en' ? en : ar);
+    let language = 'ar';
+    let observer;
+    const translate = (value) => {
+        const raw = String(value || '').trim();
+        if (en[raw]) return en[raw];
+        // Headings and buttons often begin with an emoji. Translate the actual
+        // words while retaining that icon, rather than requiring duplicate keys.
+        const cleaned = raw.replace(/^[^\u0600-\u06FFa-zA-Z0-9]+/, '').trim();
+        if (cleaned && en[cleaned]) return raw.slice(0, raw.indexOf(cleaned)) + en[cleaned];
+        return null;
+    };
+    const applyNode = node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            if (!node.__dentFlowArabic) node.__dentFlowArabic = node.nodeValue;
+            if (language === 'ar') node.nodeValue = node.__dentFlowArabic;
+            else {
+                const leading = node.__dentFlowArabic.match(/^\s*/)[0];
+                const trailing = node.__dentFlowArabic.match(/\s*$/)[0];
+                const result = translate(node.__dentFlowArabic);
+                if (result) node.nodeValue = leading + result + trailing;
+            }
+            return;
+        }
+        if (node.nodeType !== Node.ELEMENT_NODE || node.closest('[data-no-translate]')) return;
+        ['placeholder', 'title', 'aria-label', 'label'].forEach(attr => {
+            if (!node.hasAttribute(attr)) return;
+            const key = `dentflowOriginal${attr}`;
+            if (!node.dataset[key]) node.dataset[key] = node.getAttribute(attr);
+            node.setAttribute(attr, language === 'ar' ? node.dataset[key] : (translate(node.dataset[key]) || node.dataset[key]));
+        });
+        node.childNodes.forEach(applyNode);
+    };
+    const apply = selected => {
+        language = selected === 'en' ? 'en' : 'ar';
+        document.documentElement.lang = language;
+        document.documentElement.dir = language === 'en' ? 'ltr' : 'rtl';
+        document.body.classList.toggle('lang-en', language === 'en');
+        applyNode(document.body);
+        if (!observer) {
+            observer = new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(applyNode)));
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+    };
+    return { apply, translate, T, get language() { return language; } };
+})();
